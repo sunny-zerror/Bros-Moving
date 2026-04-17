@@ -3,7 +3,7 @@ import React from 'react'
 const ExpertSection = () => {
     return (
         <>
-            <div className="w-full flex items-stretch padding relative gap-x-24 py-0! my-14 ">
+            <div className="w-full flex items-stretch padding relative gap-x-44 py-0! my-14 ">
                 <div className="h-full absolute left-1/2 -translate-x-1/2 w-[1px] bg-black/10"></div>
                 <div className="w-1/2 ">
                     <img src="/images/homepage/expert_map.png" alt="" />

@@ -34,9 +34,9 @@ const highlights = [
 const OurMission = () => {
     return (
         <>
-            <div className="w-full flex items-stretch padding  relative gap-x-24  py-24!">
+            <div className="w-full flex items-stretch padding  relative gap-x-44  py-24!">
                 <div className="h-[calc(100%-12rem)] absolute left-1/2 -translate-x-1/2 w-[1px] bg-black/10"></div>
-                <div className="w-1/2 flex flex-col justify-between">
+                <div className="w-1/2 space-y-12">
                     <div className="">
                         <h2 className='text-5xl font-semibold w-[80%] '>Our Mission </h2>
                         <p className='text-[#6B6E73] text-lg mt-8  '>To turn the stress of relocation into the excitement of a new <br /> beginning by providing uncompromising care and precision.</p>

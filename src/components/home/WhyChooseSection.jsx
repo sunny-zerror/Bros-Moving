@@ -35,10 +35,10 @@ export const features = [
 const WhyChooseSection = () => {
     return (
         <>
-            <div className="w-full flex items-stretch padding  relative gap-x-24  py-24! bg-[#F9F6F3] ">
+            <div className="w-full flex items-stretch padding  relative gap-x-44  py-24! bg-[#F9F6F3] ">
                 <div className="h-[calc(100%-12rem)] absolute left-1/2 -translate-x-1/2 w-[1px] bg-black/10"></div>
                 <div className="w-1/2  ">
-                    <img src="/images/homepage/why_choose.png" alt="" />
+                    <img src="/images/homepage/why_choose.png" className='w-full' alt="" />
                 </div>
                 <div className="w-1/2 flex flex-col justify-between">
                     <div className="">

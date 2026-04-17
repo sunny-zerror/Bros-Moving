@@ -15,6 +15,18 @@ body::-webkit-scrollbar {
 .scroller_none::-webkit-scrollbar {
   display: none;
 }
+.custom_scroller::-webkit-scrollbar {
+  width: 5px;
+}
+.custom_scroller::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.custom_scroller::-webkit-scrollbar-thumb {
+  background: #F5344F;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
 button {
   cursor: pointer;
 }
