@@ -34,8 +34,8 @@ export const features = [
 
 const WhyChooseSection = () => {
     return (
-        <>
-            <div className="w-full flex items-stretch padding  relative gap-x-44  py-24! bg-[#F9F6F3] ">
+        <div className='w-full padding py-24! bg-[#F9F6F3] '>
+            <div className="w-full  max_width_layout flex items-stretch   relative gap-x-44   ">
                 <div className="h-[calc(100%-12rem)] absolute left-1/2 -translate-x-1/2 w-[1px] bg-black/10"></div>
                 <div className="w-1/2  ">
                     <img src="/images/homepage/why_choose.png" className='w-full' alt="" />
@@ -56,7 +56,7 @@ const WhyChooseSection = () => {
                     <button className='flex w-fit items-center gap-x-2 font-medium border border-black/30 leading-none   rounded-full px-4 h-12'>  Get the Estimated Cost<img src="/icons/arrow-right.svg" className='w-5' alt="" /> </button>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

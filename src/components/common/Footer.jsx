@@ -42,7 +42,7 @@ const Footer = () => {
   return (
     <>
       <div className="w-full  bg-[#090A0C] padding pb-6!">
-        <div className="w-full relative flex items-center">
+        <div className=" max_width_layout w-full relative flex items-center">
           <div className=" px-16  absolute inset-0 w-full flex items-center justify-between">
             <div className="w-full space-y-5 text-white">
               <h2 className='text-5xl font-semibold '>Ready for a Stress- <br />Free Move?</h2>
@@ -56,7 +56,7 @@ const Footer = () => {
           <img src="/images/fotter_red_box.png" className='w-full' alt="" />
         </div>
 
-        <div className="w-full relative text-[#F9F6F3]">
+        <div className=" max_width_layout w-full relative text-[#F9F6F3]">
 
           <div className="absolute inset-0 w-full flex items-center px-16 ">
             <div className=" w-full h-fit flex justify-between">

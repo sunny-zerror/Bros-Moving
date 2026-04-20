@@ -6,7 +6,8 @@ const Hero = () => {
             <div className="w-full relative  p-5">
                 <img src="/images/homepage/hero_section/hero.png" alt="" />
 
-                <div className="absolute padding pt-52! pb-0!  inset-0 flex">
+                <div className="w-full padding absolute pt-52! pb-0!  inset-0">
+                <div className=" max_width_layout  w-full flex">
                     <div className="w-1/2   pr-32 text-white">
                         <div className=" space-y-10">
                             <h1 className='text-6xl font-semibold'>Fast, Reliable & Stress-Free Moving Services</h1>
@@ -17,7 +18,7 @@ const Hero = () => {
                             </div>
                         </div>
                         <div className=" mt-28  flex items-center gap-x-4">
-                            <img src="/images/homepage/hero_section/review_people.svg" alt="" />
+                            <img src="/images/homepage/hero_section/review_people.svg" className='w-24' alt="" />
                             <p className='text-lg'> <span className='font-semibold'>1M+ </span> Customers</p>
                         </div>
                     </div>
@@ -89,6 +90,7 @@ const Hero = () => {
 
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </>

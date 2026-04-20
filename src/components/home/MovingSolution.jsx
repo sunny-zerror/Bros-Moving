@@ -4,7 +4,7 @@ const MovingSolution = () => {
     return (
         <>
             <div className="w-full padding">
-                <div className="w-full flex items-end justify-between">
+                <div className=" max_width_layout w-full flex items-end justify-between">
                     <h2 className='text-5xl font-semibold '>Smart Moving Solutions <br /> for Every Need</h2>
                     <p className='text-lg text-[#6B6E73]'>Every move is different, which is why we offer <br /> tailored solutions to match your specific needs.</p>
                     <div className="flex items-end gap-x-4">
@@ -13,7 +13,7 @@ const MovingSolution = () => {
                     </div>
                 </div>
 
-                <div className="w-full mt-14 flex justify-between">
+                <div className=" max_width_layout w-full mt-14 flex justify-between">
                     <div className="w-1/2 relative">
                         <div className="absolute bottom-16 px-10 w-full flex items-center justify-between">
                             <div className="text-white">

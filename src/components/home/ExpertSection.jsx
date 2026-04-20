@@ -2,11 +2,11 @@ import React from 'react'
 
 const ExpertSection = () => {
     return (
-        <>
-            <div className="w-full flex items-stretch padding relative gap-x-44 py-0! my-14 ">
+        <div className=' w-full padding py-0! my-14'>
+            <div className=" max_width_layout w-full flex items-stretch   relative gap-x-44  ">
                 <div className="h-full absolute left-1/2 -translate-x-1/2 w-[1px] bg-black/10"></div>
-                <div className="w-1/2 ">
-                    <img src="/images/homepage/expert_map.png" alt="" />
+                <div className="w-1/2   ">
+                    <img className='w-full' src="/images/homepage/expert_map.png" alt="" />
                     <div className="w-full mt-10 flex items-center justify-between">
                         <div className="">
                             <h2 className='text-5xl font-semibold'>12K+</h2>
@@ -30,7 +30,7 @@ const ExpertSection = () => {
                     <button className='flex w-fit items-center gap-x-2 font-medium border border-black/30 leading-none   rounded-full px-4 h-12'>  Discover More<img src="/icons/arrow-right.svg" className='w-5' alt="" /> </button>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

@@ -1,0 +1,12 @@
+.max_width_layout {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.group span {
+  transform-origin: right;
+}
+
+.group:hover span {
+  transform-origin: left;
+}
