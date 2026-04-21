@@ -1,4 +1,4 @@
-import AboutPara from '@/components/about/AboutPara'
+import AboutParagraph from '@/components/about/AboutParagraph'
 import OurCertificates from '@/components/about/OurCertificates'
 import OurMission from '@/components/about/OurMission'
 import OurTeam from '@/components/about/OurTeam'
@@ -12,7 +12,7 @@ const AboutPage = () => {
         title={"Moving You Forward with Care"}
         description={"We help you move forward with care, making every relocation smooth and stress-free."}
         image={"/images/aboutpage/about_hero.png"} />
-      <AboutPara />
+        <AboutParagraph/>
       <OurMission />
       <OurCertificates />
       <OurTeam />

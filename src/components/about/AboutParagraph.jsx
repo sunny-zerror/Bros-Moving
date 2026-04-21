@@ -6,8 +6,7 @@ import SplitText from 'gsap/dist/SplitText'
 import React, { useRef } from 'react'
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
-const AboutPara = () => {
-
+const AboutParagraph = () => {
     useGSAP(() => {
         const split = SplitText.create(".split_para", {
             type: "chars",
@@ -116,4 +115,4 @@ const AboutPara = () => {
     )
 }
 
-export default AboutPara
+export default AboutParagraph
