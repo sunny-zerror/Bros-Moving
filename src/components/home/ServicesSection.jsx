@@ -1,5 +1,6 @@
 import { Link } from 'next-view-transitions';
 import React from 'react'
+import Button from '../common/Button';
 
 const services = [
     {
@@ -55,7 +56,9 @@ const ServicesSection = () => {
             <div className="w-full   mt-32 padding  bg-[#F9F6F3]">
                 <div className=" max_width_layout w-full flex items-end">
                     <h2 className='text-5xl font-semibold w-[80%] '>Smart Logistics Solutions <br /> for Every Move</h2>
-                    <button className='flex w-fit items-center gap-x-2 font-medium border border-black/30 leading-none   rounded-full px-4 h-12'>  Explore All Services<img src="/icons/arrow-right.svg" className='w-5' alt="" /> </button>
+                    <Button variant="outline">
+                        Explore All Services
+                    </Button>
                 </div>
 
                 <div className=" max_width_layout w-full grid grid-cols-6 gap-8 mt-12">
@@ -79,8 +82,8 @@ const ServicesSection = () => {
                                     </div>
                                 </div>
                             </div>
-                            
-                            <Link href={"/services"}  className=' absolute top-1/2 center -translate-y-1/2 -right-9 group-hover:right-3 transition-all duration-300 hover:backdrop-blur-sm  hover:bg-transparent hover:border-white border-2 border-[#F5344F] bg-[#F5344F] px-3 h-24 rounded-full'>
+
+                            <Link href={"/services"} className=' absolute top-1/2 center -translate-y-1/2 -right-9 group-hover:right-3 transition-all duration-300 hover:backdrop-blur-sm  hover:bg-transparent hover:border-white border-2 border-[#F5344F] bg-[#F5344F] px-3 h-24 rounded-full'>
                                 <img src="/icons/arrow-right.svg" className='invert-100 -rotate-90' alt="" />
                             </Link>
                         </div>

@@ -42,7 +42,7 @@ const StepsSection = () => {
 
   return (
     <>
-      <div className=" steps_section_paren w-full  h-screen relative">
+      <div className=" steps_section_paren w-full  h-screen relative overflow-hidden">
         <img className='w-full h-full' src="/images/homepage/steps_section/steps_bg.png" alt="" />
 
         <div className=" padding w-full  h-full  absolute top-0 left-0 z-10 ">

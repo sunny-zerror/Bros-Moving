@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from './Button';
 
 const footerData = [
   {
@@ -48,8 +49,10 @@ const Footer = () => {
               <h2 className='text-5xl font-semibold '>Ready for a Stress- <br />Free Move?</h2>
               <p className='text-lg text-[#F9F6F3]'>Hear Directly from Our Customers About Their <br /> Smooth and Stress-Free Moving Experiences</p>
             </div>
-            <div className=" w-fit flex flex-col items-end leading-none space-y-5">
-              <button className='flex items-center gap-x-2 whitespace-nowrap font-medium  border border-white bg-white rounded-full px-4 py-3'>  Get the Estimated Cost <img src="/icons/arrow-right.svg" className='w-16 ' alt="" /> </button>
+            <div className=" w-[25%]  flex flex-col items-end leading-none space-y-5">
+              <Button variant="white">
+                Get the Estimated Cost
+              </Button>
               <button className=' w-fit flex text-white items-center gap-x-2 px-4 py-3 border font-medium border-white rounded-full'><img src="/icons/call.svg" className='w-5' alt="" /> Call Now </button>
             </div>
           </div>
@@ -75,16 +78,16 @@ const Footer = () => {
                 </div>
               </div>
               <div className="  flex gap-x-16">
-              {footerData.map((item, i) => (
-                <div key={i} className="col-span-1">
-                  <p className='text-lg mb-4 uppercase text-[#F5344F] font-semibold'>{item.title}</p>
-                  <div className="flex flex-col gap-y-2 font-light">
-                    {item.links.map((link, j) => (
-                      <a href={link.href} key={j} className=' hover:underline'>{link.label}</a>
-                    ))}
+                {footerData.map((item, i) => (
+                  <div key={i} className="col-span-1">
+                    <p className='text-lg mb-4 uppercase text-[#F5344F] font-semibold'>{item.title}</p>
+                    <div className="flex flex-col gap-y-2 font-light">
+                      {item.links.map((link, j) => (
+                        <a href={link.href} key={j} className=' hover:underline'>{link.label}</a>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
               </div>
             </div>
           </div>

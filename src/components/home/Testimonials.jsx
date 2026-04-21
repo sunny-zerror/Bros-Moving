@@ -42,9 +42,9 @@ useGSAP(() => {
                     <p className='text-lg text-[#6B6E73]'>Hear Directly from Our Customers About Their Smooth and Stress-Free Moving Experiences</p>
                 </div>
 
-                <div className=" w-full max_width_layout overflow-hidden  flex items-end">
+                <div className=" w-full max_width_layout overflow-hidden rounded-3xl  flex items-end">
                     <div className=" testimonials_slider   flex gap-x-5">
-                        {[1, 2, 3].map((item, i) => (
+                        {[1, 2, 3,4,5,6].map((item, i) => (
                             <div className="bg-white rounded-3xl p-10 flex flex-col justify-between w-[40vw] aspect-4/3" key={i}>
                                 <div className="flex gap-x-1">
                                     {[...Array(5)].map((_, i) => (

@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../common/Button';
 export const features = [
     {
         id: 1,
@@ -53,7 +54,9 @@ const WhyChooseSection = () => {
                             </div>
                         ))}
                     </div>
-                    <button className='flex w-fit items-center gap-x-2 font-medium border border-black/30 leading-none   rounded-full px-4 h-12'>  Get the Estimated Cost<img src="/icons/arrow-right.svg" className='w-5' alt="" /> </button>
+                    <Button variant="outline">
+                        Get the Estimated Cost
+                    </Button>
                 </div>
             </div>
         </div>
