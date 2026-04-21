@@ -64,10 +64,10 @@ const BlogsGrid = () => {
                         <button className='flex w-fit items-center gap-x-2 font-medium border border-black/30 leading-none   rounded-full px-4 h-12'>  Sort By<RiArrowDownSLine /> </button>
                     </div>
                 </div>
-                <div className="w-full grid grid-cols-3 pt-10 gap-10">
+                <div className="w-full grid grid-cols-3 pt-10">
                     {BLOGS.map((blog, i) => (
-                        <Link href={`/blog/${blog.slug}`} key={i} className="space-y-5">
-                            <img src={blog.image} className='w-full' alt="" />
+                        <Link href={`/blog/${blog.slug}`} key={i} className=" group space-y-5 p-5 border transition-all duration-300 border-transparent rounded-xl  hover:shadow-xl hover:border-black/10">
+                            <img src={blog.image} className='w-full group-hover:scale-95 transition-all duration-300' alt="" />
                             <div className="flex w-full justify-between">
                                 <div className="flex items-center gap-x-2">
                                     <img src="/icons/form_person.svg" alt="" />

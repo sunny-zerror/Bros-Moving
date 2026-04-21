@@ -1,9 +1,15 @@
+"use client";
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import React from 'react'
+gsap.registerPlugin(ScrollTrigger);
 
 const highlights = [
     {
         id: 1,
         title: "5-Star Reputation Since Day One",
+        className: "left-0",
         description:
             "Our commitment to excellence isn't just a claim—it's documented. We've maintained a perfect 5-star Google rating by treating every box as if it were our own heritage.",
         icon: "/images/aboutpage/trust_star.svg",
@@ -11,6 +17,7 @@ const highlights = [
     {
         id: 2,
         title: "The Stress-Free Process",
+        className: "left-[25%]",
         description:
             "Our kinetic methodology ensures seamless movement without the friction. From careful planning to precise execution, we handle every detail with expertise and efficiency.",
         icon: "/images/aboutpage/trust_scale.svg",
@@ -18,6 +25,7 @@ const highlights = [
     {
         id: 3,
         title: "Highly Trained Pros",
+        className: "left-[50%]",
         description:
             "More than just movers, we are specialists in precision and safety. Every move is guided by structured planning, strict safety procedures, and expert handling techniques.",
         icon: "/images/aboutpage/trust_car.svg",
@@ -25,6 +33,7 @@ const highlights = [
     {
         id: 4,
         title: "Transparent Communication",
+        className: "right-0",
         description:
             "We understand how frustrating unexpected costs can be. That's why we operate with complete transparency—no hidden charges, no surprise fees.",
         icon: "/images/aboutpage/trust_circle.svg",
@@ -32,49 +41,85 @@ const highlights = [
 ];
 
 const OurMission = () => {
+
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".mission_section_paren",
+                start: "top top",
+                end: "+=1500",
+                pin: true,
+                scrub: true,
+                // markers: true,
+            },
+        });
+
+        tl.fromTo(
+            ".mission_card",
+            {
+                rotate: (i) => [15, -15, 20, -15][i],
+            },
+            {
+                rotate: (i) => [-3, 3, -2.8, 3][i],
+                stagger: 0.1,
+                ease: "power3.out",
+            }
+        );
+        tl.from(
+            ".mission_card",
+            {
+                x: "150vw",
+                stagger: 0.1,
+                ease: "power3.out",
+            }, "<"
+        );
+    });
     return (
+
         <>
-            <div className="w-full flex items-stretch padding  relative gap-x-44  py-24!">
-                <div className="h-[calc(100%-12rem)] absolute left-1/2 -translate-x-1/2 w-[1px] bg-black/10"></div>
-                <div className="w-1/2 space-y-12">
-                    <div className="">
-                        <h2 className='text-5xl font-semibold w-[80%] '>Our Mission </h2>
-                        <p className='text-[#6B6E73] text-lg mt-8  '>To turn the stress of relocation into the excitement of a new <br /> beginning by providing uncompromising care and precision.</p>
-                    </div>
-                    <div className="space-y-10">
-                        <div className="flex items-start gap-x-4">
-                            <img src="/icons/red_smile.svg" className='w-12' alt="" />
-                            <div className="">
-                                <h3 className='text-2xl leading-none font-semibold'>Happy Faces Guaranteed</h3>
-                                <p className='text-[#6B6E73] mt-3 w-[60%]'>Our success is measured in smiles. Every tailored service is designed to ensure you walk into your new home with complete peace of mind.</p>
+            <div className="w-full padding">
+                <div className=" max_width_layout w-full flex items-stretch  relative gap-x-44">
+                    <div className="h-full absolute left-1/2 -translate-x-1/2 w-[1px] bg-black/10"></div>
+                    <div className="w-1/2 space-y-12">
+                        <div className="">
+                            <h2 className='text-5xl font-semibold w-[80%] '>Our Mission </h2>
+                            <p className='text-[#6B6E73] text-lg mt-8  '>To turn the stress of relocation into the excitement of a new <br /> beginning by providing uncompromising care and precision.</p>
+                        </div>
+                        <div className="space-y-10">
+                            <div className="flex items-start gap-x-4">
+                                <img src="/icons/red_smile.svg" className='w-12' alt="" />
+                                <div className="">
+                                    <h3 className='text-2xl leading-none font-semibold'>Happy Faces Guaranteed</h3>
+                                    <p className='text-[#6B6E73] mt-3 w-[70%]'>Our success is measured in smiles. Every tailored service is designed to ensure you walk into your new home with complete peace of mind.</p>
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-x-4">
+                                <img src="/icons/red_dollar.svg" className='w-12' alt="" />
+                                <div className="">
+                                    <h3 className='text-2xl leading-none font-semibold'>Competitive & Affordable</h3>
+                                    <p className='text-[#6B6E73] mt-3 w-[70%]'>Premium service shouldn't come with a prohibitive price tag. We offer the best value in Regina without sacrificing quality.</p>
+                                </div>
                             </div>
                         </div>
-                        <div className="flex items-start gap-x-4">
-                            <img src="/icons/red_dollar.svg" className='w-12' alt="" />
-                            <div className="">
-                                <h3 className='text-2xl leading-none font-semibold'>Competitive & Affordable</h3>
-                                <p className='text-[#6B6E73] mt-3 w-[60%]'>Premium service shouldn't come with a prohibitive price tag. We offer the best value in Regina without sacrificing quality.</p>
-                            </div>
-                        </div>
                     </div>
-                </div>
-                <div className="w-1/2  ">
-                    <img src="/images/aboutpage/mission_img.png" alt="" />
-                </div>
+                    <div className="w-1/2  ">
+                        <img src="/images/aboutpage/mission_img.png" className='w-full' alt="" />
+                    </div>
 
+                </div>
             </div>
+            <div className='mission_section_paren w-full relative h-screen overflow-hidden '>
 
-            <div className="w-full relative ">
-                <img className='w-full' src="/images/aboutpage/trust_bg.png" alt="" />
-                <div className="absolute padding py-32! flex flex-col justify-between w-full inset-0">
+                <img className='w-full h-full' src="/images/aboutpage/trust_bg.png" alt="" />
+
+                <div className=" padding w-full  h-full  absolute top-0 left-0 z-10 ">
                     <div className="text-center text-white">
                         <h2 className='text-5xl font-semibold '>Built on Precision & Trust</h2>
-                        <p className='text-lg  mt-2'>Why thousands of families choose Bros Moving Inc. for their most important <br /> transitions.</p>
+                        <p className='text-lg  mt-2 leading-tight'>Why thousands of families choose Bros Moving Inc. for their most important <br /> transitions.</p>
                     </div>
-
-                    <div className="w-full flex items-center justify-center gap-x-5">
+                    <div className=" max_width_layout relative h-full  w-full flex items-center">
                         {highlights.map((highlight, i) => (
-                            <div key={i} className="p-8 w-[20vw] relative aspect-3/4">
+                            <div key={i} className={`mission_card p-8 absolute w-[22vw] aspect-3/4 ${highlight.className} `}>
                                 <img src="/images/aboutpage/trust_card_bg.png" className=' inset-0 absolute w-full' alt="" />
                                 <div className="relative z-10 flex flex-col justify-center gap-y-5 items-center h-full text-center w-full">
                                     <img src={highlight.icon} alt="" />
@@ -84,7 +129,6 @@ const OurMission = () => {
                             </div>
                         ))}
                     </div>
-
                 </div>
             </div>
         </>

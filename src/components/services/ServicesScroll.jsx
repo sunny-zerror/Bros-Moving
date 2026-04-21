@@ -1,4 +1,10 @@
-import React from 'react'
+"use client";
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import React, { useRef } from 'react'
+import Button from '../common/Button';
+gsap.registerPlugin(ScrollTrigger);
 
 export const SERVICES = [
     {
@@ -85,33 +91,80 @@ export const SERVICES = [
 ];
 
 const ServicesScroll = () => {
+
+    const container = useRef();
+
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            defaults: { ease: "linear" },
+            scrollTrigger: {
+                trigger: ".left_scroll",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: true,
+                // markers: true,
+            },
+        });
+
+        tl.to(".serv_img1", {
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+        })
+            .to(".serv_img2", {
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            }, "<")
+            .to(".serv_img2", {
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+            })
+            .to(".serv_img3", {
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            }, "<")
+            .to(".serv_img3", {
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+            })
+            .to(".serv_img4", {
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            }, "<")
+            .to(".serv_img4", {
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+            })
+            .to(".serv_img5", {
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            }, "<")
+    }, { scope: container });
+
     return (
         <>
-            <div className="w-full padding space-y-20">
-
-                {SERVICES.map((service, i) => (
-                    <div key={i} className="w-full flex items-stretch  relative gap-x-44 ">
-                        <div className="h-full absolute left-1/2 -translate-x-1/2 w-[1px] bg-black/10"></div>
-                        <div className="w-1/2 flex flex-col justify-between">
-                            <div className="">
-                                <h2 className='text-5xl font-semibold w-[80%] '>{service.title}</h2>
-                                <p className='text-[#6B6E73] text-lg mt-3  '>{service.desc}</p>
-                            </div>
-                            <div className="space-y-7">
-                                {service.innerServices.map((feature, i) => (
-                                    <div key={i} className="flex items-center  gap-x-4">
-                                        <img src="/icons/red_check.svg" className='' alt="" />
-                                        <p className='text-lg font-semibold leading-none'>{feature}</p>
+            <div ref={container} className="service-scroll-paren w-full padding py-0!">
+                <div className="w-full max_width_layout">
+                    <div className="w-full flex items-stretch  relative gap-x-32 ">
+                        <div className=" left_scroll w-1/2  flex flex-col space-y-24 py-24 justify-between">
+                            {SERVICES.map((service, i) => (
+                                <div key={i} className="  space-y-10">
+                                    <div className="">
+                                        <h2 className='text-5xl font-semibold w-[80%] '>{service.title}</h2>
+                                        <p className='text-[#6B6E73] text-lg mt-3  '>{service.desc}</p>
                                     </div>
-                                ))}
-                            </div>
-                            <button className='flex w-fit items-center gap-x-2 font-medium border border-black/30 leading-none   rounded-full px-4 h-12'>  Get the Estimated Cost<img src="/icons/arrow-right.svg" className='w-5' alt="" /> </button>
+                                    <div className="space-y-7">
+                                        {service.innerServices.map((feature, i) => (
+                                            <div key={i} className="flex items-center  gap-x-4">
+                                                <img src="/icons/red_check.svg" className='' alt="" />
+                                                <p className='text-lg font-semibold leading-none'>{feature}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <Button variant='outline'> Get the Estimated Cost </Button>
+                                </div>
+                            ))}
                         </div>
-                        <div className="w-1/2  ">
-                            <img src={service.image} className='w-full' alt="" />
+                        <div className="w-1/2 sticky flex items-center top-0 h-screen  ">
+                            <img src={SERVICES[0].image} style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }} className='  serv_img1 w-full absolute' alt="" />
+                            <img src={SERVICES[1].image} style={{ clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)" }} className='serv_img2 w-full absolute' alt="" />
+                            <img src={SERVICES[2].image} style={{ clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)" }} className='serv_img3 w-full absolute' alt="" />
+                            <img src={SERVICES[3].image} style={{ clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)" }} className='serv_img4 w-full absolute' alt="" />
+                            <img src={SERVICES[4].image} style={{ clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)" }} className='serv_img5 w-full absolute' alt="" />
                         </div>
                     </div>
-                ))}
+                </div>
             </div>
         </>
     )

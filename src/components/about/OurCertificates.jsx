@@ -35,25 +35,27 @@ const OurCertificates = () => {
     return (
         <>
             <div className="w-full padding pb-0! bg-[#F9F6F3]">
-                <div className="w-full flex items-end justify-between">
-                    <h2 className='text-5xl font-semibold '>Our certifications</h2>
-                    <p className='text-lg text-[#6B6E73]'>Proudly awarded for our commitment to quality and <br /> customer satisfaction.</p>
-                </div>
+                <div className=" max_width_layout w-full">
+                    <div className=" w-full flex items-end justify-between">
+                        <h2 className='text-5xl font-semibold '>Our certifications</h2>
+                        <p className='text-lg leading-tight text-[#6B6E73]'>Proudly awarded for our commitment to quality <br /> and customer satisfaction.</p>
+                    </div>
 
-                <div className="w-full pt-20">
-                    {associations.map((association, i) => (
-                        <div
-                            key={association.id}
-                            className="w-full flex justify-between items-center py-5 border-t border-black/10"
-                        >
-                            <p className='text-[#6B6E73] text-lg'>0{i + 1}</p>
-                            <h3 className='text-2xl w-[20%] font-semibold'>{association.title}</h3>
-                            <div className="w-[10%]  center">
-                            <img src="/images/aboutpage/certifcate_logo.png" alt="" />
+                    <div className="w-full pt-20">
+                        {associations.map((association, i) => (
+                            <div
+                                key={association.id}
+                                className="w-full flex justify-between items-center py-5 border-t border-black/10"
+                            >
+                                <p className='text-[#6B6E73] text-lg'>0{i + 1}</p>
+                                <h3 className='text-2xl w-[20%] font-semibold'>{association.title}</h3>
+                                <div className="w-[10%]  center">
+                                    <img src="/images/aboutpage/certifcate_logo.png" alt="" />
+                                </div>
+                                <p className=' w-[30%] text-center text-[#6B6E73]'>{association.description}</p>
                             </div>
-                            <p className=' w-[30%] text-center text-[#6B6E73]'>{association.description}</p>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </>

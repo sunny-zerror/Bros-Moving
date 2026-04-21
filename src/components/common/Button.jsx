@@ -1,5 +1,6 @@
 "use client";
-import Link from "next/link";
+
+import { Link } from "next-view-transitions";
 
 function cn(...classes) {
     return classes.filter(Boolean).join(" ");

@@ -47,7 +47,7 @@ const Footer = () => {
           <div className=" px-16  absolute inset-0 w-full flex items-center justify-between">
             <div className="w-full space-y-5 text-white">
               <h2 className='text-5xl font-semibold '>Ready for a Stress- <br />Free Move?</h2>
-              <p className='text-lg text-[#F9F6F3]'>Hear Directly from Our Customers About Their <br /> Smooth and Stress-Free Moving Experiences</p>
+              <p className='text-lg leading-tight text-[#F9F6F3]'>Hear Directly from Our Customers About Their <br /> Smooth and Stress-Free Moving Experiences</p>
             </div>
             <div className=" w-[25%]  flex flex-col items-end leading-none space-y-5">
               <Button variant="white">
