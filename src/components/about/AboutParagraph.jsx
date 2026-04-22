@@ -9,7 +9,7 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 const AboutParagraph = () => {
     useGSAP(() => {
         const split = SplitText.create(".split_para", {
-            type: "chars",
+            type: "words, chars",
         });
         gsap.from(split.chars, {
             opacity: .2,

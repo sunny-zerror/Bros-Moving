@@ -57,10 +57,10 @@ const OurMission = () => {
         tl.fromTo(
             ".mission_card",
             {
-                rotate: (i) => [15, -15, 20, -15][i],
+                rotate: (i) => [15, -15, 20, -25][i],
             },
             {
-                rotate: (i) => [-3, 3, -2.8, 3][i],
+                rotate: (i) => [0, 0, 0, 0][i],
                 stagger: 0.1,
                 ease: "power3.out",
             }
@@ -80,24 +80,24 @@ const OurMission = () => {
             <div className="w-full padding">
                 <div className=" max_width_layout w-full flex items-stretch  relative gap-x-44">
                     <div className="h-full absolute left-1/2 -translate-x-1/2 w-[1px] bg-black/10"></div>
-                    <div className="w-1/2 space-y-12">
+                    <div className="w-1/2  flex flex-col justify-between">
                         <div className="">
                             <h2 className='text-5xl font-semibold w-[80%] '>Our Mission </h2>
-                            <p className='text-[#6B6E73] text-lg mt-8  '>To turn the stress of relocation into the excitement of a new <br /> beginning by providing uncompromising care and precision.</p>
+                            <p className='text-[#6B6E73] text-lg mt-4  '>To turn the stress of relocation into the excitement of a new <br /> beginning by providing uncompromising care and precision.</p>
                         </div>
                         <div className="space-y-10">
                             <div className="flex items-start gap-x-4">
                                 <img src="/icons/red_smile.svg" className='w-12' alt="" />
                                 <div className="">
                                     <h3 className='text-2xl leading-none font-semibold'>Happy Faces Guaranteed</h3>
-                                    <p className='text-[#6B6E73] mt-3 w-[70%]'>Our success is measured in smiles. Every tailored service is designed to ensure you walk into your new home with complete peace of mind.</p>
+                                    <p className='text-[#6B6E73] mt-3 w-[80%]'>Our success is measured in smiles. Every tailored service is designed to ensure you walk into your new home with complete peace of mind.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-x-4">
                                 <img src="/icons/red_dollar.svg" className='w-12' alt="" />
                                 <div className="">
                                     <h3 className='text-2xl leading-none font-semibold'>Competitive & Affordable</h3>
-                                    <p className='text-[#6B6E73] mt-3 w-[70%]'>Premium service shouldn't come with a prohibitive price tag. We offer the best value in Regina without sacrificing quality.</p>
+                                    <p className='text-[#6B6E73] mt-3 w-[80%]'>Premium service shouldn't come with a prohibitive price tag. We offer the best value in Regina without sacrificing quality.</p>
                                 </div>
                             </div>
                         </div>
@@ -117,9 +117,9 @@ const OurMission = () => {
                         <h2 className='text-5xl font-semibold '>Built on Precision & Trust</h2>
                         <p className='text-lg  mt-2 leading-tight'>Why thousands of families choose Bros Moving Inc. for their most important <br /> transitions.</p>
                     </div>
-                    <div className=" max_width_layout relative h-full  w-full flex items-center">
+                    <div className=" max_width_layout relative h-full  w-full grid grid-cols-4 gap-x-5 items-center">
                         {highlights.map((highlight, i) => (
-                            <div key={i} className={`mission_card p-8 absolute w-[22vw] aspect-3/4 ${highlight.className} `}>
+                            <div key={i} className={`mission_card p-8  w-full aspect-3/4 ${highlight.className} `}>
                                 <img src="/images/aboutpage/trust_card_bg.png" className=' inset-0 absolute w-full' alt="" />
                                 <div className="relative z-10 flex flex-col justify-center gap-y-5 items-center h-full text-center w-full">
                                     <img src={highlight.icon} alt="" />

@@ -42,7 +42,7 @@ const VideoSection = () => {
                     <div className=" info_vid_sec opacity-0 padding absolute bottom-24 w-full py-0!  flex items-end">
 
                         <div className="w-full max_width_layout border-b  pb-5 border-white/40 ">
-                            <div className="w-full text-[#F9F6F3] flex  items-center justify-between ">
+                            <div className="w-full text-[#ffffff] flex  items-center justify-between ">
                                 <p className='text-lg '>We provide full insurance coverage to keep your belongings safe, <br /> giving you complete peace of mind throughout your move.</p>
                                 <img src="/images/homepage/smart_moving/trust_logos.svg" alt="" />
                             </div>
@@ -51,7 +51,7 @@ const VideoSection = () => {
                 </div>
             </div>
             <div className=" absolute video_inner w-[60%] h-[50%] rounded-3xl overflow-hidden">
-                <video loop autoPlay muted playsInline src="https://static.ext.waabi.ai/WAABI_27s_2K_antinomy_export_250823.mp4" className='cover' alt="" />
+                <video poster='/images/hero_video_poster_.webp' loop autoPlay muted playsInline src="/videos/hero_video.mp4" className='cover' alt="" />
             </div>
         </div>
     )

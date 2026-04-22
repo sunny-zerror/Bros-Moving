@@ -12,7 +12,7 @@ const AboutPage = () => {
         title={"Moving You Forward with Care"}
         description={"We help you move forward with care, making every relocation smooth and stress-free."}
         image={"/images/aboutpage/about_hero.png"} />
-        <AboutParagraph/>
+      <AboutParagraph />
       <OurMission />
       <OurCertificates />
       <OurTeam />

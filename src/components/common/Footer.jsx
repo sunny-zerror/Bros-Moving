@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from './Button';
+import { Link } from 'next-view-transitions';
 
 const footerData = [
   {
@@ -24,9 +25,8 @@ const footerData = [
     title: "Company",
     links: [
       { label: "About Us", href: "/about" },
-      { label: "Careers", href: "/careers" },
-      { label: "Blog", href: "/blog" },
-      { label: "Press", href: "/press" },
+      { label: "Services", href: "/services" },
+      { label: "Blogs", href: "/blogs" },
     ],
   },
   {
@@ -83,7 +83,7 @@ const Footer = () => {
                     <p className='text-lg mb-4 uppercase text-[#F5344F] font-semibold'>{item.title}</p>
                     <div className="flex flex-col gap-y-2 font-light">
                       {item.links.map((link, j) => (
-                        <a href={link.href} key={j} className=' hover:underline'>{link.label}</a>
+                        <Link href={link.href} key={j} className=' hover:underline'>{link.label}</Link>
                       ))}
                     </div>
                   </div>

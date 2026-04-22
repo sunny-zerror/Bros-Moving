@@ -10,3 +10,47 @@
 .group:hover span {
   transform-origin: left;
 }
+
+.hero_title div,
+.hero_desc div {
+  display: block;
+  width: fit-content;
+  overflow: hidden;
+}
+
+.hero_title span,
+.hero_desc span {
+  display: block;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.8s;
+  animation-timing-function: ease;
+}
+
+::view-transition-new(root) {
+  animation-name: pageFadeIn;
+}
+
+::view-transition-old(root) {
+  animation-name: pageFadeOut;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pageFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

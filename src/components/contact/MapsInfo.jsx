@@ -4,7 +4,7 @@ const MapsInfo = () => {
     return (
         <>
             <div className="w-full padding pt-0!">
-                <div className="w-full grid grid-cols-3 gap-x-10">
+                <div className=" max_width_layout w-full grid grid-cols-3 gap-x-10">
                     <div className="w-full flex items-center gap-x-4 rounded-3xl bg-[#F9F6F3] p-7">
                         <img src="/icons/contact_dialer.svg" alt="" />
                         <div className="space-y-2 leading-none">
@@ -27,7 +27,7 @@ const MapsInfo = () => {
                     </div>
                 </div>
 
-                <div className="w-full mt-10 rounded-2xl aspect-2/1 overflow-hidden">
+                <div className=" max_width_layout w-full mt-10 rounded-3xl aspect-2/1 overflow-hidden">
                     <iframe
                         src="https://www.google.com/maps?q=52.3756,4.9032&z=15&output=embed"
                         width="100%"

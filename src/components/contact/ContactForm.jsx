@@ -48,7 +48,7 @@ const ContactForm = () => {
     return (
         <>
             <div className="w-full padding">
-                <div className="w-full flex items-stretch border-b border-black/10  pb-14  relative gap-x-44 ">
+                <div className=" max_width_layout w-full flex items-stretch border-b border-black/10  pb-14  relative gap-x-44 ">
                     <div className="h-[calc(100%-3.5rem)] absolute left-1/2 -translate-x-1/2 w-[1px] bg-black/10"></div>
                     <div className="w-1/2 flex flex-col justify-between">
                         <div className="">
@@ -128,7 +128,7 @@ const ContactForm = () => {
                                     placeholder="Additional note"
                                     value={form.note}
                                     onChange={handleChange}
-                                    rows={6}
+                                    rows={5}
                                     className="w-full custom_scroller pr-3 bg-transparent outline-none placeholder:text-[#6B6E73] resize-none"
                                 />
                             </div>
@@ -138,7 +138,7 @@ const ContactForm = () => {
 
                         </form>
                     </div>
-                    <div className="w-1/2  ">
+                    <div className="w-1/2 flex items-center  ">
                         <img src="/images/contactpage/contact_form_img.png" className='w-full' alt="" />
                     </div>
                 </div>

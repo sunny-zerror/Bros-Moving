@@ -45,7 +45,7 @@ const OurCertificates = () => {
                         {associations.map((association, i) => (
                             <div
                                 key={association.id}
-                                className="w-full flex justify-between items-center py-5 border-t border-black/10"
+                                className="w-full hover:px-5 transition-all duration-300 flex justify-between items-center py-5 border-t border-black/10"
                             >
                                 <p className='text-[#6B6E73] text-lg'>0{i + 1}</p>
                                 <h3 className='text-2xl w-[20%] font-semibold'>{association.title}</h3>

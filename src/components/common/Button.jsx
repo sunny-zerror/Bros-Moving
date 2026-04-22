@@ -12,6 +12,7 @@ const Button = ({
     variant = "primary",
     className,
     icon = true,
+    ...props
 }) => {
     const baseStyles =
         " group inline-flex w-fit whitespace-nowrap items-center hover:gap-x-2 gap-x-0  rounded-full transition-all duration-300 px-5 h-12 pr-2  font-medium transition-all duration-300";
@@ -55,7 +56,7 @@ const Button = ({
     }
 
     return (
-        <button className={cn(baseStyles, variants[variant], className)}>
+        <button {...props} className={cn(baseStyles, variants[variant], className)}>
             {content}
         </button>
     );
