@@ -94,7 +94,7 @@ const ContactForm = () => {
                                 <img className="w-5" src="/icons/form_setting.svg" alt="" />
 
                                 {/* Selected Value */}
-                                <span className={`w-full ${form.service ? "text-black" : "text-[#6B6E73] from-orange-50"}`}>
+                                <span className={`w-full ${form.service ? "text-black" : "text-[#6B6E73]"}`}>
                                     {form.service || "Services"}
                                 </span>
 

@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { ViewTransitions } from "next-view-transitions";
+import EstimateForm from "@/components/common/EstimateForm";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,6 +31,9 @@ export default function SiteLayout({ children }) {
   return (
     <ViewTransitions>
       <LenisScroll>
+
+      <EstimateForm/>
+
         <header>
           <Header />
         </header>

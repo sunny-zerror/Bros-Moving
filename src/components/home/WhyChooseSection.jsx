@@ -37,16 +37,16 @@ const WhyChooseSection = () => {
     return (
         <div className='w-full padding py-24! bg-[#F9F6F3] '>
             <div className="w-full  max_width_layout flex items-stretch   relative gap-x-44   ">
-                <div className="h-[calc(100%-12rem)] absolute left-1/2 -translate-x-1/2 w-[1px] bg-black/10"></div>
+                <div className="h-full absolute left-1/2 -translate-x-1/2 w-[1px] bg-black/10"></div>
                 <div className="w-1/2  ">
                     <img src="/images/homepage/why_choose.png" className='w-full' alt="" />
                 </div>
                 <div className="w-1/2 flex flex-col justify-between">
                     <div className="">
                         <h2 className='text-5xl font-semibold w-[80%] '>Why Choose Bro's Moving?</h2>
-                        <p className='text-[#6B6E73] text-lg mt-8  '>Reliable moving services built on care, efficiency, and clear <br /> communication.</p>
+                        <p className='text-[#6B6E73] text-lg mt-4 leading-tight  '>Reliable moving services built on care, efficiency, and clear <br /> communication.</p>
                     </div>
-                    <div className="space-y-5">
+                    <div className="space-y-4">
                         {features.map((feature, i) => (
                             <div key={i} className="flex items-center gap-x-4">
                                 <img src={feature.icon} className='w-12' alt="" />

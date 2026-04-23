@@ -23,34 +23,64 @@
   display: block;
 }
 
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation-duration: 0.8s;
-  animation-timing-function: ease;
+/* Hide default calendar icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  display: none;
 }
 
-::view-transition-new(root) {
-  animation-name: pageFadeIn;
+/* Remove default styles */
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
 }
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.ripple {
+  animation: ripple 1.8s infinite;
+}
+
+.skeleton {
+  animation: skeleton-flicker 1.2s ease-in-out infinite;
+}
+
+@keyframes skeleton-flicker {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 
 ::view-transition-old(root) {
-  animation-name: pageFadeOut;
+  animation: fade-out 0.4s ease forwards;
 }
 
-@keyframes pageFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+::view-transition-new(root) {
+  animation: fade-in 0.4s ease forwards;
+  animation-delay: 0.4s; 
+  opacity: 0; 
 }
 
-@keyframes pageFadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

@@ -6,6 +6,7 @@ import { Link } from 'next-view-transitions'
 import { usePathname } from 'next/navigation';
 import React from 'react'
 import Button from './Button';
+import { useQuoteStore } from '@/store/useQuoteStore';
 gsap.registerPlugin(ScrollTrigger);
 
 const navLinks = [
@@ -21,14 +22,22 @@ const navLinks = [
     label: "Blogs",
     href: "/blogs"
   },
+  {
+    label: "Contact",
+    href: "/contact"
+  },
 ]
 const Header = () => {
-
+const { open } = useQuoteStore();
   const pathname = usePathname();
 
   useGSAP(() => {
     let lastScroll = 0;
 
+    gsap.to(".header", {
+      opacity:1,
+      delay:3
+    })
     // 🎯 ScrollTrigger (your existing effect)
     gsap.to(".header", {
       backgroundColor: "#090A0C",
@@ -73,7 +82,7 @@ const Header = () => {
 
   return (
     <>
-      <div className=" header w-full px-24 pt-12 z-100  fixed  top-0 left-0 will-change-transform">
+      <div className=" header opacity-0 w-full px-24 pt-12 z-100  fixed  top-0 left-0 will-change-transform">
         <div className="w-full max_width_layout flex items-center pb-4  justify-between border-b border-white/20 ">
           <Link href='/' className=" w-[25%]  ">
             <img src="/logo.svg" className='' alt="" />
@@ -103,7 +112,7 @@ const Header = () => {
             <button className='flex text-white items-center group gap-x-2'>
               <img src="/icons/call.svg" className='w-5' alt="" />
               <p className='relative'>
-                Call Now
+                +1 (800) 123-4567
                 <span
                   className={`
                   absolute left-0 bottom-[-3px] h-[1.5px] rounded-full w-full bg-white
@@ -113,8 +122,8 @@ const Header = () => {
                 ></span>
               </p>
             </button>
-            <Button href="/contact" variant="white">
-              Get a Quote
+            <Button onClick={open} variant="white">
+              Get Estimate
             </Button>
           </div>
         </div>

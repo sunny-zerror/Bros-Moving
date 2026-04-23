@@ -6,6 +6,7 @@ import { Link } from 'next-view-transitions';
 import React, { useRef, useState } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import Image from 'next/image';
 gsap.registerPlugin(SplitText);
 
 const BLOGS = [
@@ -85,7 +86,9 @@ const BlogDetailData = [
         content: `Kingsley’s consistent performance and commitment to excellence reflect the core values of Bor’s Moving—care, reliability, and professionalism. His contributions not only help maintain our reputation for quality service but also inspire others to raise their standards.`
     }
 ]
+
 const BlogsDetail = () => {
+    const [isLoaded, setIsLoaded] = useState(false);
     const [isBeginning, setIsBeginning] = useState(true);
     const [isEnd, setIsEnd] = useState(false);
     const swiperRef = useRef(null);
@@ -126,11 +129,14 @@ const BlogsDetail = () => {
             yPercent: 100
         });
 
+        if (!isLoaded) return;
+
         gsap.to(titleSplit.lines, {
             yPercent: 0,
             duration: 1,
             ease: "power3.out",
-            stagger: 0.08
+            stagger: 0.08,
+            delay: 0.4
         });
 
         gsap.to(descSplit.lines, {
@@ -138,10 +144,10 @@ const BlogsDetail = () => {
             duration: 1,
             ease: "power3.out",
             stagger: 0.05,
-            delay: 0.4
+            delay: 0.6
         });
 
-    }, { scope: container });
+    }, { scope: container, dependencies: [isLoaded] });
 
     return (
         <>
@@ -162,7 +168,10 @@ const BlogsDetail = () => {
                         </div>
                     </div>
                 </div>
-                <img className='w-full ' src="/images/blogpage/blog_detail_img.png" alt="" />
+                <Image width={1920} height={1080} onLoad={() => setIsLoaded(true)} className={`w-full opacity-0 transition-all duration-300 ${isLoaded ? "opacity-100" : "opacity-0"}`} src="/images/blogpage/blog_detail_img.png" alt="" />
+                <div className={`w-full absolute pointer-events-none transition-all  skeleton duration-300 inset-0 p-5 ${isLoaded ? "opacity-0" : "opacity-100"} `}>
+                    <img className='w-full' src="/images/page_hero_skeleton.png" alt="" />
+                </div>
             </div>
 
             <div className=" max_width_layout w-[60%] padding px-0! pb-10! border-b border-black/10 mx-auto space-y-8">
@@ -184,13 +193,31 @@ const BlogsDetail = () => {
             </div>
 
             <div className=" max_width_layout w-[60%] mx-auto flex items-center justify-between mt-10 mb-24">
-                <Link href={"/blog/becky-livingstn"} className='flex w-fit items-center gap-x-2 font-medium border border-black/30 leading-none   rounded-full px-4 h-12'> <img src="/icons/arrow-right.svg" className='w-5 rotate-180' alt="" />  Previous Blog </Link>
-                <Link href={"/blog/becky-livingsto"} className='flex w-fit items-center gap-x-2 font-medium border border-black/30 leading-none   rounded-full px-4 h-12'>  Next Blog<img src="/icons/arrow-right.svg" className='w-5' alt="" /> </Link>
+                <Link href={"/blog/becky-livingstn"} className=' group hover:pl-2 pl-0 transition-all duration-300 flex w-fit items-center gap-x-0 hover:gap-x-2 font-medium border border-black/30 leading-none   rounded-full px-4 h-12'>
+                    <div className={`group-hover:scale-100 group-hover:p-2.5 transition-all duration-300 scale-0  p-0 overflow-hidden bg-[#090A0C] rounded-full  `}>
+                        <img
+                            src="/icons/arrow-right.svg"
+                            className="w-4 invert-100 rotate-180"
+                            alt="arrow"
+                        />
+                    </div>
+                    Previous Blog
+                     </Link>
+                <Link href={"/blog/becky-livingsto"} className=' group hover:pr-2 pr-0 transition-all duration-300 flex w-fit items-center gap-x-0 hover:gap-x-2 font-medium border border-black/30 leading-none   rounded-full px-4 h-12'>
+                        Next Blog
+                    <div className={`group-hover:scale-100 group-hover:p-2.5 transition-all duration-300 scale-0  p-0 overflow-hidden bg-[#090A0C] rounded-full  `}>
+                        <img
+                            src="/icons/arrow-right.svg"
+                            className="w-4 invert-100"
+                            alt="arrow"
+                        />
+                    </div>
+                     </Link>
             </div>
 
             <div className=" w-full padding bg-[#F9F6F3]">
                 <div className=" max_width_layout w-full flex items-end justify-between">
-                    <h2 className='text-5xl font-semibold '>Related Latest Blog</h2>
+                    <h2 className='text-5xl font-semibold '>Read Latest Blog</h2>
                     <div className="flex items-end gap-x-2">
 
                         {/* PREV */}
@@ -230,7 +257,7 @@ const BlogsDetail = () => {
                     </div>
                 </div>
 
-                <div className=" max_width_layout mt-20 w-full ">
+                <div className=" max_width_layout mt-14 w-full ">
                     <Swiper
                         onSwiper={(swiper) => {
                             swiperRef.current = swiper;
@@ -241,7 +268,7 @@ const BlogsDetail = () => {
                             setIsBeginning(swiper.isBeginning);
                             setIsEnd(swiper.isEnd);
                         }}
-                        spaceBetween={0}
+                        spaceBetween={30}
                         slidesPerView={3}
                         grabCursor={true}
                         className="cursor-grab active:cursor-grabbing"
@@ -252,20 +279,20 @@ const BlogsDetail = () => {
                         }}
                     >
                         {BLOGS.map((blog, i) => (
-                            <SwiperSlide key={i} className=' group space-y-5 p-5 border transition-all! duration-300! border-transparent rounded-xl  hover:shadow-xl hover:border-black/10'>
+                            <SwiperSlide key={i} className=' group space-y-5 '>
                                 <Link href={`/blog/${blog.slug}`} key={i} className="space-y-5">
                                     <img src={blog.image} className='w-full group-hover:scale-95 transition-all duration-300' alt="" />
                                     <div className="flex w-full justify-between">
                                         <div className="flex items-center gap-x-2">
                                             <img src="/icons/form_person.svg" alt="" />
-                                            <p className='text-lg text-[#6B6E73]'>{blog.author}</p>
+                                            <p className='text-lg text-[#6B6E73] transition-all duration-300  group-hover:text-[#090A0C]'>{blog.author}</p>
                                         </div>
                                         <div className="flex items-center gap-x-2">
                                             <img src="/icons/red_calender.svg" alt="" />
-                                            <p className='text-lg text-[#6B6E73]'>{blog.date}</p>
+                                            <p className='text-lg text-[#6B6E73] transition-all duration-300  group-hover:text-[#090A0C]'>{blog.date}</p>
                                         </div>
                                     </div>
-                                    <h3 className='text-2xl font-semibold'>{blog.title}</h3>
+                                    <h3 className='text-2xl group-hover:text-[#F5344F]  transition-all duration-300 leading-tight group-hover:underline font-semibold'>{blog.title}</h3>
                                 </Link>
                             </SwiperSlide>
                         ))}

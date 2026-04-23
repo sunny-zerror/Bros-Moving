@@ -77,7 +77,7 @@ const BlogsGrid = () => {
         <>
             <div className="w-full padding">
                 <div className=" max_width_layout w-full flex border-b border-black/10 pb-5 items-end justify-between">
-                    <h2 className='text-5xl font-semibold '>6 Blogs</h2>
+                    <h2 className='text-5xl font-semibold '>Blogs<sup className='text-lg'>(6)</sup> </h2>
                     <div className="relative flex items-end gap-x-4">
 
                         <button
@@ -130,21 +130,21 @@ const BlogsGrid = () => {
 
                     </div>
                 </div>
-                <div className=" max_width_layout w-full grid grid-cols-3 pt-10">
+                <div className=" max_width_layout w-full grid grid-cols-3 gap-8 gap-y-12 pt-10">
                     {BLOGS.map((blog, i) => (
-                        <Link href={`/blog/${blog.slug}`} key={i} className=" group space-y-5 p-5 border transition-all duration-300 border-transparent rounded-xl  hover:shadow-xl hover:border-black/10">
+                        <Link href={`/blog/${blog.slug}`} key={i} className=" group space-y-5 ">
                             <img src={blog.image} className='w-full group-hover:scale-95 transition-all duration-300' alt="" />
                             <div className="flex w-full justify-between">
                                 <div className="flex items-center gap-x-2">
                                     <img src="/icons/form_person.svg" alt="" />
-                                    <p className='text-lg text-[#6B6E73]'>{blog.author}</p>
+                                    <p className='text-lg text-[#6B6E73] transition-all duration-300  group-hover:text-[#090A0C]'>{blog.author}</p>
                                 </div>
                                 <div className="flex items-center gap-x-2">
                                     <img src="/icons/red_calender.svg" alt="" />
-                                    <p className='text-lg text-[#6B6E73]'>{blog.date}</p>
+                                    <p className='text-lg text-[#6B6E73] transition-all duration-300  group-hover:text-[#090A0C]'>{blog.date}</p>
                                 </div>
                             </div>
-                            <h3 className='text-2xl font-semibold'>{blog.title}</h3>
+                            <h3 className='text-2xl group-hover:text-[#F5344F]  transition-all duration-300 leading-tight group-hover:underline font-semibold'>{blog.title}</h3>
                         </Link>
                     ))}
                 </div>

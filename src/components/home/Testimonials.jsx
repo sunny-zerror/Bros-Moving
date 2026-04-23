@@ -16,9 +16,8 @@ useGSAP(() => {
 
   const moveX = totalWidth - visibleWidth;
 
-  gsap.fromTo(
+  gsap.to(
     slider,
-    { x: "25vw" }, 
     {
       x: -moveX,
       ease: "none",
@@ -36,7 +35,7 @@ useGSAP(() => {
 
     return (
         <>
-            <div className=" testimonials_paren w-full h-screen padding flex flex-col justify-between  bg-[#F9F6F3]">
+            <div className=" testimonials_paren w-full h-screen padding flex flex-col justify-between">
                 <div className="w-full h-fit text-center">
                     <h2 className='text-5xl font-semibold '>What Our Customers Say</h2>
                     <p className='text-lg text-[#6B6E73]'>Hear Directly from Our Customers About Their Smooth and Stress-Free Moving Experiences</p>
@@ -45,7 +44,7 @@ useGSAP(() => {
                 <div className=" w-full max_width_layout overflow-hidden rounded-3xl  flex items-end">
                     <div className=" testimonials_slider   flex gap-x-5">
                         {[1, 2, 3,4,5,6].map((item, i) => (
-                            <div className="bg-white rounded-3xl p-10 flex flex-col justify-between w-[40vw] aspect-4/3" key={i}>
+                            <div className="bg-[#F9F6F3] rounded-3xl p-10 flex flex-col justify-between w-[40vw] aspect-4/3" key={i}>
                                 <div className="flex gap-x-1">
                                     {[...Array(5)].map((_, i) => (
                                         <img key={i} src="/icons/gold_star.svg" alt="" />

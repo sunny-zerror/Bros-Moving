@@ -97,7 +97,7 @@ const OurTeam = () => {
                 </div>
 
                 {/* Swiper */}
-                <div className="mt-20">
+                <div className="mt-8">
                     <Swiper
                         onSwiper={(swiper) => {
                             swiperRef.current = swiper;
@@ -119,9 +119,13 @@ const OurTeam = () => {
                         }}
                     >
                         {teamData.map((member, i) => (
-                            <SwiperSlide key={i}>
-                                <div className="w-full text-center">
-                                    <img src={member.img} className="w-full" alt="" />
+                            <SwiperSlide key={i} className=" pt-12 group  relative">
+                                <div className="w-full relative text-center">
+                                    <div className="w-full  flex items-end justify-center relative ">
+                                        <img src="/images/aboutpage/team_card_bg.png" className="absolute inset-0 w-full" alt="" />
+                                        <img src="/images/aboutpage/team_card_bg_red.png" className="absolute opacity-0 group-hover:opacity-100 transition-all duration-300 inset-0 w-full" alt="" />
+                                        <img src={member.img} className="w-[81%] origin-bottom group-hover:scale-105 transition-all duration-300 relative z-10" alt="" />
+                                    </div>
                                     <h3 className="text-3xl mt-5 font-semibold">
                                         {member.name}
                                     </h3>

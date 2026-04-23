@@ -56,7 +56,7 @@ const ServicesSection = () => {
             <div className="w-full   mt-32 padding  bg-[#F9F6F3]">
                 <div className=" max_width_layout w-full flex items-end">
                     <h2 className='text-5xl font-semibold w-[80%] '>Smart Logistics Solutions <br /> for Every Move</h2>
-                    <Button variant="outline">
+                    <Button variant="outline" href={"/services"}>
                         Explore All Services
                     </Button>
                 </div>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -7,7 +7,31 @@ import Button from "../common/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const HOTSPOTS = [
+    {
+        id: 1,
+        title: "Regina",
+        subtitle: "Saskatchewan, CA",
+        top: "45%",
+        left: "35%",
+    },
+    {
+        id: 2,
+        title: "Winnipeg",
+        subtitle: "Manitoba, CA", // ✅ fixed
+        top: "35%",
+        left: "30%",
+    },
+    {
+        id: 3,
+        title: "Alberta",
+        subtitle: "Canada", // ✅ cleaner (province)
+        top: "48%",
+        left: "45%",
+    },
+];
 const ExpertSection = () => {
+    const [activeId, setActiveId] = useState(null);
     const sectionRef = useRef(null);
     const countersRef = useRef([]);
 
@@ -45,12 +69,46 @@ const ExpertSection = () => {
 
     return (
         <div ref={sectionRef} className='w-full padding py-0! my-14'>
-            <div className="max_width_layout w-full flex items-stretch relative gap-x-44">
+            <div className="max_width_layout w-full flex items-stretch relative gap-x-32">
 
                 <div className="h-full absolute left-1/2 -translate-x-1/2 w-[1px] bg-black/10"></div>
 
-                {/* LEFT */}
-                <div className="w-1/2">
+                <div className="w-1/2 relative" >
+
+                    {HOTSPOTS.map((item) => (
+                        <div
+                            key={item.id}
+                            style={{ top: item.top, left: item.left }}
+                            className={`absolute z-50 flex items-center gap-x-2 ${activeId === item.id ? "z-100" : ""}`}
+                            onMouseLeave={() => setActiveId(null)}
+                        >
+
+                            {/* DOT */}
+                            <div
+                                className="relative  cursor-pointer flex items-center justify-center"
+                                onMouseEnter={() => setActiveId(item.id)}
+                            >
+                                {/* Ripple */}
+                                <span className="absolute inline-flex size-4 rounded-full bg-white opacity-75 animate-ping"></span>
+                                <span className="relative size-4 bg-white text-black/50 rounded-full flex items-center justify-center text-sm">
+                                    +
+                                </span>
+                            </div>
+
+                            {/* TOOLTIP */}
+                            <div
+                                className={`transition-all duration-300 p-3 bg-white rounded-lg shadow-md
+      ${activeId === item.id
+                                        ? "opacity-100 translate-y-0"
+                                        : "opacity-0 translate-y-3 pointer-events-none"
+                                    }`}
+                            >
+                                <h3 className="font-medium text-xl">{item.title}</h3>
+                                <p className="text-[#6B6E73]">{item.subtitle}</p>
+                            </div>
+                        </div>
+                    ))}
+
                     <img className='w-full' src="/images/homepage/expert_map.png" alt="" />
 
                     <div className="w-full mt-10 flex items-center justify-between">
@@ -108,11 +166,13 @@ const ExpertSection = () => {
                 {/* RIGHT */}
                 <div className="w-1/2 flex flex-col justify-between">
                     <div>
-                        <h2 className='text-5xl font-semibold w-[80%]'>
+                        <h2 className='text-5xl font-semibold'>
                             Expert Movers Serving Regina, Winnipeg & Alberta
                         </h2>
                         <p className='text-[#6B6E73] text-lg mt-8'>
-                            At Bor’s Moving, we proudly deliver reliable, stress-free moving services across Regina, Winnipeg, Saskatchewan, and Alberta.
+                            At Bro’s Moving, we proudly deliver reliable, stress-free moving services across Regina, Winnipeg, Saskatchewan, and Alberta. Whether you're relocating your home, office, or handling a long-distance move, our experienced team ensures every step is handled with care and precision.
+                            <br /><br />
+                            From careful packing and secure transportation to timely delivery and setup, we focus on making your move smooth and hassle-free. Our commitment to professionalism, transparent pricing, and customer satisfaction has made us a trusted choice for individuals and businesses alike.
                         </p>
                     </div>
 

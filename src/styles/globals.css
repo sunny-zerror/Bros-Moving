@@ -8,7 +8,6 @@ body {
   overflow-x: hidden;
   width: 100%;
   color: #090A0C;
-  
 }
 body::-webkit-scrollbar {
   display: none;
