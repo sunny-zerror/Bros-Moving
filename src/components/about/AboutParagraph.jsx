@@ -59,7 +59,7 @@ const AboutParagraph = () => {
         }, sectionRef);
 
         return () => ctx.revert();
-    }, []);
+    });
 
     return (
         <>

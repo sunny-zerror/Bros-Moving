@@ -40,7 +40,7 @@ const Introloader = () => {
 
             .set(".introloader_fix", { display: "none" });
 
-    }, []);
+    });
 
     return (
         <>

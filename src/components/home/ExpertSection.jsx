@@ -65,7 +65,7 @@ const ExpertSection = () => {
         }, sectionRef);
 
         return () => ctx.revert();
-    }, []);
+    });
 
     return (
         <div ref={sectionRef} className='w-full padding py-0! my-8 md:my-14'>
