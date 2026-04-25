@@ -16,24 +16,10 @@ const Hero = () => {
     const container = useRef();
 
     useGSAP(() => {
-        const titleSplit = new SplitText(".hero_title", {
-            type: "lines",
-            linesClass: "line-wrapper"
-        });
 
         const descSplit = new SplitText(".hero_desc", {
             type: "lines",
             linesClass: "line-wrapper"
-        });
-
-        titleSplit.lines.forEach(line => {
-            const wrapper = document.createElement("div");
-            wrapper.style.overflow = "hidden";
-            wrapper.style.display = "block";
-            wrapper.style.width = "fit-content";
-
-            line.parentNode.insertBefore(wrapper, line);
-            wrapper.appendChild(line);
         });
 
         descSplit.lines.forEach(line => {
@@ -46,21 +32,35 @@ const Hero = () => {
             wrapper.appendChild(line);
         });
 
-        gsap.set([...titleSplit.lines, ...descSplit.lines], {
+        gsap.set([...descSplit.lines], {
             yPercent: 100
         });
 
-        const tl = gsap.timeline({ delay: 2.5 })
+        const tl = gsap.timeline({ delay: 0.5 })
 
-        tl.to(container.current, { clipPath: "polygon(0% 0%, 100% 0, 100% 100%, 0% 100%)", duration: 1.2, ease: "expo.out" });
+        tl.to(".line1a", {
+            transform: "translateY(-100%)",
+            ease: "expo.out",
+            duration: .8
+        })
+        tl.to(".line2a", {
+            transform: "translateY(-8%)",
+            ease: "expo.out",
+            duration: .8
+        }, "<")
+        tl.to(".line2a", {
+            transform: "translateY(-108%)",
+            ease: "expo.out",
+            duration: .8
+        })
+        tl.to(".line3a", {
+            transform: "translateY(-8%)",
+            ease: "expo.out",
+            duration: .8
+        }, "<")
+
+        tl.to(".vide_pren", { clipPath: "polygon(0% 0%, 100% 0, 100% 100%, 0% 100%)", duration: 1.2, ease: "expo.out" }, "<");
         tl.to(".hero_video", { scale: 1, duration: .8, ease: "power2.out" }, "<");
-
-        tl.to(titleSplit.lines, {
-            yPercent: -8,
-            duration: 1,
-            ease: "power3.out",
-            stagger: 0.08
-        });
 
         tl.to(descSplit.lines, {
             yPercent: 0,
@@ -78,18 +78,30 @@ const Hero = () => {
 
     return (
         <>
-            <Introloader />
-            <div style={{ clipPath: "polygon(0% 0%, 100% 0, 100% 0%, 0% 0%)" }} ref={container} className="w-full  h-[100svh]  relative p-2 md:p-5">
-                <div className="w-full h-full overflow-hidden rounded-2xl md:rounded-[36px]">
+            {/* <Introloader /> */}
+            <div ref={container} className="w-full  h-[100svh]  relative p-2 md:p-5">
+                <div style={{ clipPath: "polygon(0% 0%, 100% 0, 100% 0%, 0% 0%)" }} className="vide_pren w-full h-full overflow-hidden rounded-2xl md:rounded-[36px]">
                     <video poster='/images/hero_video_poster_.webp' loop autoPlay muted playsInline src="/videos/hero_video.mp4" className={` hero_video scale-[2] cover brightness-95`} alt="" />
                 </div>
                 <div className="w-full padding absolute  h-full  inset-0">
                     <div className=" max_width_layout  w-full  h-full">
                         <div className=" flex flex-col justify-end h-full  pb-5 md:pb-0 text-white">
                             <div className=" space-y-6 md:space-y-10">
-                                <div className="hero_text  space-y-6 md:space-y-10">
-                                    <h1 className="hero_title text-4xl md:text-7xl md:w-1/2 font-semibold">
-                                        Fast, Reliable & Stress-Free Moving Services
+                                <div className="space-y-6 md:space-y-10">
+                                    <h1 className="text-4xl md:text-7xl md:w-1/2 font-semibold">
+                                        <div className='block overflow-hidden  relative'>
+                                            <div className=' line1a text-black'>Hi</div>
+                                            <div className=' line2a translate-y-full absolute inset-0 text-[#F5344F]'>We’re Bro’s moving</div>
+                                            <div className=' line3a translate-y-full absolute inset-0'>⁠We make</div>
+                                        </div>
+                                        <div className='block overflow-hidden'>
+                                            <div className='line3a translate-y-full'>moving reliable & </div>
+                                        </div>
+                                        <div className='block overflow-hidden'>
+                                            <div className="line3a translate-y-full">
+                                                stress-free
+                                            </div>
+                                        </div>
                                     </h1>
 
                                     <p className="hero_desc leading-tight text-base md:text-lg ">
@@ -98,7 +110,7 @@ const Hero = () => {
                                 </div>
                                 <div className=" quote_btn_paren opacity-0 flex gap-x-2">
                                     <Button onClick={open} variant="primary">
-                                        Get a Quote
+                                        Get an estimate now!
                                     </Button>
                                 </div>
                             </div>

@@ -60,7 +60,7 @@ const EstimateForm = () => {
                         <div className="w-full flex items-start justify-between">
                             <div>
                                 <h2 className="text-2xl font-semibold">
-                                    Get Your Cost Estimate
+                                    Get an estimate now!
                                 </h2>
                                 <p className="text-[#6B6E73] leading-tight  ">
                                     Fill in your move details to get an instant estimate.

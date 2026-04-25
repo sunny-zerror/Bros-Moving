@@ -59,7 +59,7 @@ const WhyChooseSection = () => {
                         ))}
                     </div>
                     <Button variant="outline" onClick={open}>
-                        Get the Estimated Cost
+                        Get an estimate now!
                     </Button>
                 </div>
             </div>

@@ -152,7 +152,7 @@ const OurMission = () => {
                         ))}
                     </div>
                     {/* <Button onClick={open} variant="white">
-              Get Estimate
+              Get an estimate now!
             </Button> */}
                 </div>
             </div>

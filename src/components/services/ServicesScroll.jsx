@@ -153,7 +153,7 @@ const ServicesScroll = () => {
                                             </div>
                                         ))}
                                     </div>
-                                    <Button onClick={open} variant='outline'> Get the Estimated Cost </Button>
+                                    <Button onClick={open} variant='outline'> Get an estimate now!</Button>
                                 </div>
                             ))}
                         </div>

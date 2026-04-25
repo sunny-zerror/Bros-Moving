@@ -55,7 +55,7 @@ const Footer = () => {
             </div>
             <div className=" w-full md:w-[25%]  md:flex flex-col items-end leading-none space-y-2 md:space-y-5">
               <Button variant="white" onClick={open}>
-                Get the Estimated Cost
+                Get an estimate now!
               </Button>
               <button className=' w-fit flex text-white items-center gap-x-2 px-4 py-3 border font-medium border-white rounded-full'><img src="/icons/call.svg" className='w-5' alt="" /> (555) 123-4567</button>
             </div>

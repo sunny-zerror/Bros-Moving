@@ -39,7 +39,7 @@ const VideoSection = () => {
                     <div className="  flex flex-col items-center justify-center w-full space-y-5">
                         <h2 className='text-3xl md:text-5xl  font-semibold text-center text-white '>Worry-Free Moving with Full <br /> Insurance Coverage</h2>
                         <Button variant="glass" onClick={open} >
-                            Get the Estimated Cost
+                            Get an estimate now!
                         </Button>
                     </div>
                     <div className=" info_vid_sec opacity-0 padding absolute bottom-20 md:bottom-24 w-full py-0!  flex items-end">

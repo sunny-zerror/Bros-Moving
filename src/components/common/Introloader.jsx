@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import SplitText from 'gsap/dist/SplitText';
 import React from 'react'
+import Button from './Button';
 gsap.registerPlugin(SplitText);
 
 const Introloader = () => {
@@ -32,11 +33,11 @@ const Introloader = () => {
                 stagger: 0.02,
             })
 
-              .to(anim_words2.words, {   
+            .to(anim_words2.words, {
                 yPercent: -100,
                 ease: "power2.out",
                 stagger: 0.02,
-                }, "<")
+            }, "<")
 
             .set(".introloader_fix", { display: "none" });
 
@@ -44,20 +45,24 @@ const Introloader = () => {
 
     return (
         <>
-            <div className=" introloader_fix w-full fixed top-0 left-0 h-screen z-100  bg-[#f1f1f1] pointer-events-none padding flex items-center">
-                <div className="w-full flex items-center justify-between">
-                    <div className="relative w-full overflow-hidden">
-                        <p className='hello_txt translate-y-full text-xl lg:text-3xl font-medium'>
-                            Hello
-                        </p>
+            <div className=" introloader_fix w-full fixed inset-0 h-screen z-100  bg-[#f1f1f1] pointer-events-none padding flex items-center">
+                <div className=" max_width_layout h-full w-full flex items-center justify-between">
+                    <div className="  flex flex-col justify-end h-full  pb-5 md:pb-0 text-white  space-y-6 md:space-y-10">
+                        <div className="  space-y-6 md:space-y-10">
+                            <h1 className="text-4xl md:text-7xl md:w-1/2 font-semibold">
+                                ⁠We make <br /> moving reliable & <br /> stress-free
+                            </h1>
 
-                        <p className='absolute intr_txt text-xl lg:text-3xl font-medium text-[#F5344F]'>
-                            We are Bro's Moving
-                        </p>
+                            <p className=" leading-tight text-base md:text-lg ">
+                                Local & long-distance moving with professional  <br />packing and guaranteed safety.
+                            </p>
+                        </div>
+                        <div className="  opacity-0 pointer-events-none  flex gap-x-2">
+                            <Button onClick={open} variant="primary">
+                                Get an estimate now!
+                            </Button>
+                        </div>
 
-                        <p className='absolute short_txt text-xl lg:text-3xl font-medium'>
-                            Moving made simple fast and stress-free
-                        </p>
                     </div>
                 </div>
             </div>

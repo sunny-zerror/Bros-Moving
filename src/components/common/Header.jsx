@@ -42,7 +42,7 @@ const Header = () => {
 
     gsap.to(".header", {
       opacity: 1,
-      delay: 3
+      delay: 2
     })
 
     const tl = gsap.timeline({
@@ -123,10 +123,10 @@ const Header = () => {
 
       <div className={`header ${pathname === "/" ? "opacity-0" : ""} w-full px-4 md:px-24 pt-4 md:pt-12 z-100  fixed  top-0 left-0 will-change-transform`}>
         <div className=" header_inner w-full max_width_layout flex items-center pb-4  justify-between border-b border-white/20 ">
-          <Link href='/' className=" w-[20%] md:w-[5%] lg:w-[25%]  ">
+          <Link href='/' className=" w-[20%] md:w-[30%]  ">
             <img src="/logo.svg" className='' alt="" />
           </Link>
-          <nav className=" hidden md:flex  w-1/2 text-white justify-center items-center gap-x-10">
+          <nav className=" hidden md:flex  w-[40%] text-white justify-center items-center gap-x-10">
             {navLinks.map((link, i) => {
               const isActive = pathname === link.href;
 
@@ -147,7 +147,7 @@ const Header = () => {
               );
             })}
           </nav>
-          <div className=" hidden md:flex w-[25%] items-center justify-end gap-x-5 leading-none">
+          <div className=" hidden md:flex w-[30%] shrink-0 items-center gap-x-5 justify-end leading-none">
             <button className=' text-white flex whitespace-nowrap items-center group gap-x-2'>
               <img src="/icons/call.svg" className='w-5' alt="" />
               <p className='relative'>
@@ -162,7 +162,7 @@ const Header = () => {
               </p>
             </button>
             <Button onClick={open} variant="white">
-              Get Estimate
+              Get an estimate now!
             </Button>
           </div>
 
