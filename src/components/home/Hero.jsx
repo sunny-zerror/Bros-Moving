@@ -56,7 +56,7 @@ const Hero = () => {
         tl.to(".hero_video", { scale: 1, duration: .8, ease: "power2.out" }, "<");
 
         tl.to(titleSplit.lines, {
-            yPercent: 0,
+            yPercent: -8,
             duration: 1,
             ease: "power3.out",
             stagger: 0.08
@@ -79,20 +79,20 @@ const Hero = () => {
     return (
         <>
             <Introloader />
-            <div style={{ clipPath: "polygon(0% 0%, 100% 0, 100% 0%, 0% 0%)" }} ref={container} className="w-full  h-screen  relative  p-5">
-                <div className="w-full h-full overflow-hidden rounded-[36px]">
+            <div style={{ clipPath: "polygon(0% 0%, 100% 0, 100% 0%, 0% 0%)" }} ref={container} className="w-full  h-[100svh]  relative p-2 md:p-5">
+                <div className="w-full h-full overflow-hidden rounded-2xl md:rounded-[36px]">
                     <video poster='/images/hero_video_poster_.webp' loop autoPlay muted playsInline src="/videos/hero_video.mp4" className={` hero_video scale-[2] cover brightness-95`} alt="" />
                 </div>
                 <div className="w-full padding absolute  h-full  inset-0">
-                    <div className=" max_width_layout  w-full  h-full flex items-center">
-                        <div className="w-1/2 flex flex-col justify-end h-full   pr-32  text-white">
-                            <div className=" space-y-10">
-                                <div className="hero_text space-y-10">
-                                    <h1 className="hero_title text-7xl font-semibold">
+                    <div className=" max_width_layout  w-full  h-full">
+                        <div className=" flex flex-col justify-end h-full  pb-5 md:pb-0 text-white">
+                            <div className=" space-y-6 md:space-y-10">
+                                <div className="hero_text  space-y-6 md:space-y-10">
+                                    <h1 className="hero_title text-4xl md:text-7xl md:w-1/2 font-semibold">
                                         Fast, Reliable & Stress-Free Moving Services
                                     </h1>
 
-                                    <p className="hero_desc leading-tight text-lg ">
+                                    <p className="hero_desc leading-tight text-base md:text-lg ">
                                         Local & long-distance moving with professional  <br />packing and guaranteed safety.
                                     </p>
                                 </div>

@@ -9,8 +9,9 @@ const page = () => {
                 title={"Discover Our Latest Stories"}
                 description={"Explore a collection of the latest news, practical guides, and industry insights—all in one place."}
                 image={"/images/blogpage/blog_hero.png"}
+                mobImage={"/images/blogpage/mob_blog_hero.png"}
             />
-            <BlogsGrid/>
+            <BlogsGrid />
         </>
     )
 }

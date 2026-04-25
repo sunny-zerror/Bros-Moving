@@ -47,20 +47,20 @@ const ContactForm = () => {
 
     return (
         <>
-            <div className="w-full padding">
-                <div className=" max_width_layout w-full flex items-stretch border-b border-black/10  pb-14  relative gap-x-44 ">
-                    <div className="h-[calc(100%-3.5rem)] absolute left-1/2 -translate-x-1/2 w-[1px] bg-black/10"></div>
-                    <div className="w-1/2 flex flex-col justify-between">
+            <div className="w-full padding pb-5! md:pb-10!">
+                <div className=" max_width_layout w-full flex flex-col md:flex-row items-stretch border-b border-black/10 pb-5 md:pb-14  relative gap-x-44 ">
+                    <div className=" max-sm:hidden h-[calc(100%-3.5rem)] absolute left-1/2 -translate-x-1/2 w-[1px] bg-black/10"></div>
+                    <div className=" w-full md:w-1/2 flex flex-col justify-between">
                         <div className="">
-                            <h2 className='text-5xl font-semibold w-[80%] '>Have question? <br />We’re Here to Help!</h2>
-                            <p className='placeholder:text-[#6B6E73] text-lg mt-3  '>Our expertise and personalized approach ensure you make well-informed decisions, turning your dreams into reality.</p>
+                            <h2 className='text-3xl md:text-5xl  font-semibold md:w-[80%] '>Have question? <br />We’re Here to Help!</h2>
+                            <p className='text-[#6B6E73] leading-tight text-base md:text-lg mt-2  '>Our expertise and personalized approach ensure you make well-informed decisions, turning your dreams into reality.</p>
                         </div>
                         <form
                             onSubmit={handleSubmit}
-                            className="w-full  space-y-5"
+                            className="w-full max-sm:mt-5 space-y-3 md:space-y-5"
                         >
                             {/* Full Name */}
-                            <div className="flex items-center gap-x-2 border rounded-full px-4 py-3 border-black/10">
+                            <div className="flex items-center gap-x-2 border rounded-full px-4 py-3 hover:px-6 hover:border-[#F5344F] transition-all duration-300 border-black/10">
                                 <img className='w-5' src="/icons/form_person.svg" alt="" />
                                 <input
                                     type="text"
@@ -73,7 +73,7 @@ const ContactForm = () => {
                             </div>
 
                             {/* Phone */}
-                            <div className="flex items-center gap-x-2 border rounded-full px-4 py-3 border-black/10">
+                            <div className="flex items-center gap-x-2 border rounded-full px-4 py-3 hover:px-6 hover:border-[#F5344F] transition-all duration-300 border-black/10">
                                 <img className='w-5' src="/icons/form_dialer.svg" alt="" />
                                 <input
                                     type="tel"
@@ -88,7 +88,7 @@ const ContactForm = () => {
                             {/* Services Dropdown */}
                             <div
                                 ref={dropdownRef}
-                                className="flex relative items-center gap-x-2 border rounded-full px-4 py-3 border-black/10 cursor-pointer"
+                                className="flex relative items-center gap-x-2 border rounded-full px-4 py-3 hover:px-6 hover:border-[#F5344F] transition-all duration-300 border-black/10 cursor-pointer"
                                 onClick={() => setOpen((prev) => !prev)}
                             >
                                 <img className="w-5" src="/icons/form_setting.svg" alt="" />
@@ -120,7 +120,7 @@ const ContactForm = () => {
                             </div>
 
                             {/* Note */}
-                            <div className="flex items-start gap-x-2 border rounded-2xl px-4 py-3 border-black/10">
+                            <div className="flex items-start gap-x-2 border rounded-2xl px-4 py-3 hover:px-6 hover:border-[#F5344F] transition-all duration-300 border-black/10">
                                 <img className='w-5' src="/icons/form_note.svg" alt="" />
                                 <textarea
                                     data-lenis-prevent
@@ -138,7 +138,7 @@ const ContactForm = () => {
 
                         </form>
                     </div>
-                    <div className="w-1/2 flex items-center  ">
+                    <div className=" w-full  max-sm:mt-10 md:w-1/2 flex items-center  ">
                         <img src="/images/contactpage/contact_form_img.png" className='w-full' alt="" />
                     </div>
                 </div>

@@ -36,11 +36,14 @@ button {
   justify-content: center;
 }
 .padding {
-  padding: 1rem;
+  padding-inline: 1rem;
+  padding-block: 2.5rem;
+
 }
 @media (min-width: 750px) {
   .padding {
-    padding: 6rem;
+    padding-inline: 6rem;
+  padding-block: 6rem;
   }
 }
 .cover {

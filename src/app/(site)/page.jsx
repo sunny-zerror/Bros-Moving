@@ -19,7 +19,6 @@ const HomePage = () => {
       <WhyChooseSection/>
       <Testimonials/>
       <VideoSection/>
-      {/* <MovingSolution/> */}
       <TrendingBlogs/>
     </>
   )

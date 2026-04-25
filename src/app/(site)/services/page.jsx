@@ -10,10 +10,12 @@ const ServicesPage = () => {
       <PageHero
         title={"Bro's Moving Reliable Moving Services"}
         description={"Trusted moving solutions for homes and businesses across Saskatchewan."}
-        image={"/images/servicepage/service_hero.png"} />
+        image={"/images/servicepage/service_hero.png"}
+        mobImage={"/images/servicepage/mob_service_hero.png"}
+      />
       <ServicesScroll />
-      <VideoSection />
-      <Testimonials />
+      {/* <VideoSection /> */}
+      {/* <Testimonials /> */}
     </>
   )
 }

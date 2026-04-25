@@ -12,21 +12,21 @@ const HOTSPOTS = [
         id: 1,
         title: "Regina",
         subtitle: "Saskatchewan, CA",
-        top: "45%",
+        top: "40%",
         left: "35%",
     },
     {
         id: 2,
         title: "Winnipeg",
         subtitle: "Manitoba, CA", // ✅ fixed
-        top: "35%",
+        top: "30%",
         left: "30%",
     },
     {
         id: 3,
         title: "Alberta",
         subtitle: "Canada", // ✅ cleaner (province)
-        top: "48%",
+        top: "43%",
         left: "45%",
     },
 ];
@@ -68,12 +68,12 @@ const ExpertSection = () => {
     }, []);
 
     return (
-        <div ref={sectionRef} className='w-full padding py-0! my-14'>
-            <div className="max_width_layout w-full flex items-stretch relative gap-x-32">
+        <div ref={sectionRef} className='w-full padding py-0! my-8 md:my-14'>
+            <div className="max_width_layout w-full flex flex-col-reverse max-sm:gap-y-10 md:flex-row items-stretch relative gap-x-32">
 
-                <div className="h-full absolute left-1/2 -translate-x-1/2 w-[1px] bg-black/10"></div>
+                <div className=" max-sm:hidden h-full absolute left-1/2 -translate-x-1/2 w-[1px] bg-black/10"></div>
 
-                <div className="w-1/2 relative" >
+                <div className=" w-full md:w-1/2 relative" >
 
                     {HOTSPOTS.map((item) => (
                         <div
@@ -117,11 +117,11 @@ const ExpertSection = () => {
                             <h2
                                 ref={(el) => (countersRef.current[0] = el)}
                                 data-target="12000"
-                                className='text-5xl font-semibold'
+                                className='text-3xl md:text-5xl  font-semibold'
                             >
                                 0
                             </h2>
-                            <p className='text-[#6B6E73] text-lg'>Moves Completed</p>
+                            <p className='text-[#6B6E73] text-sm md:text-lg'>Moves Completed</p>
                         </div>
 
                         <div>
@@ -129,54 +129,54 @@ const ExpertSection = () => {
                                 <h2
                                     ref={(el) => (countersRef.current[1] = el)}
                                     data-target="24"
-                                    className='text-5xl font-semibold'
+                                    className='text-3xl md:text-5xl  font-semibold'
                                 >
                                     0
                                 </h2>
                                 <h2
-                                    className='text-5xl font-semibold'
+                                    className='text-3xl md:text-5xl  font-semibold'
                                 >
                                     /
                                 </h2>
                                 <h2
                                     ref={(el) => (countersRef.current[2] = el)}
                                     data-target="7"
-                                    className='text-5xl font-semibold'
+                                    className='text-3xl md:text-5xl  font-semibold'
                                 >
                                     0
                                 </h2>
                             </div>
-                            <p className='text-[#6B6E73] text-lg'>Customer Support</p>
+                            <p className='text-[#6B6E73] text-sm md:text-lg'>Customer Support</p>
                         </div>
 
                         <div>
                             <h2
                                 ref={(el) => (countersRef.current[3] = el)}
                                 data-target="15"
-                                className='text-5xl font-semibold'
+                                className='text-3xl md:text-5xl  font-semibold'
                             >
                                 0
                             </h2>
-                            <p className='text-[#6B6E73] text-lg'>Years Experience</p>
+                            <p className='text-[#6B6E73] text-sm md:text-lg'>Years Experience</p>
                         </div>
 
                     </div>
                 </div>
 
                 {/* RIGHT */}
-                <div className="w-1/2 flex flex-col justify-between">
+                <div className=" w-full md:w-1/2 flex flex-col max-sm:space-y-5 justify-between">
                     <div>
-                        <h2 className='text-5xl font-semibold'>
+                        <h2 className='  text-3xl md:text-5xl  font-semibold'>
                             Expert Movers Serving Regina, Winnipeg & Alberta
                         </h2>
-                        <p className='text-[#6B6E73] text-lg mt-8'>
+                        <p className='text-[#6B6E73] text-base md:text-lg mt-2 md:mt-8'>
                             At Bro’s Moving, we proudly deliver reliable, stress-free moving services across Regina, Winnipeg, Saskatchewan, and Alberta. Whether you're relocating your home, office, or handling a long-distance move, our experienced team ensures every step is handled with care and precision.
                             <br /><br />
                             From careful packing and secure transportation to timely delivery and setup, we focus on making your move smooth and hassle-free. Our commitment to professionalism, transparent pricing, and customer satisfaction has made us a trusted choice for individuals and businesses alike.
                         </p>
                     </div>
 
-                    <Button variant="outline">
+                    <Button variant="outline" href={"/about"}>
                         Discover More
                     </Button>
                 </div>

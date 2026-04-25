@@ -5,74 +5,59 @@ import SplitText from 'gsap/dist/SplitText';
 import React from 'react'
 gsap.registerPlugin(SplitText);
 
-const words = [
-    "Secure",
-    "Fast",
-    "Trusted",
-    "Seamless",
-    "Smooth Move",
-]
 const Introloader = () => {
 
-useGSAP(() => {
-  const lenis = window.lenis;
+    useGSAP(() => {
+        const anim_words = SplitText.create(".intr_txt", {
+            type: "words, chars",
+        });
+        const anim_words2 = SplitText.create(".short_txt", {
+            type: "words, chars",
+        });
 
-  if (lenis) lenis.stop(); // stop immediately
+        const tl = gsap.timeline({ delay: 0.5 });
 
-  const anim_words = SplitText.create(".intr_txt", {
-    type: "words, chars",
-  });
+        tl.to(".hello_txt", { yPercent: -100, ease: "power2.out" })
+            .to(".hello_txt", { yPercent: -200, ease: "power2.out" }, ">+=0.2")
 
-  const tl = gsap.timeline({
-    delay: 0.5,
-    onComplete: () => {
-      if (window.lenis) {
-        window.lenis.start(); // ✅ restart after animation
-      }
-    },
-  });
+            .to(anim_words.words, {
+                yPercent: -100,
+                ease: "power2.out",
+                stagger: 0.02,
+            }, "<")
 
-  tl.to(".hello_txt", { yPercent: -100, ease: "power2.out" })
-    .to(".hello_txt", { yPercent: -200, ease: "power2.out" }, ">+=0.2")
-    .to(anim_words.words, {
-      yPercent: -100,
-      ease: "power2.out",
-      stagger: 0.05,
-    }, "<")
-    .to(".serv_anim_text", {
-      yPercent: -100,
-      ease: "power2.out",
-      stagger: 0.05,
-    }, "<")
-    .to(anim_words.words, {
-      yPercent: -200,
-      ease: "power2.out",
-      stagger: 0.05,
-    })
-    .to(".serv_anim_text", {
-      yPercent: -200,
-      ease: "power2.out",
-      stagger: 0.05,
-    }, "<")
-    .set(".introloader_fix", { display: "none" });
+            .to(anim_words.words, {
+                yPercent: -200,
+                ease: "power2.out",
+                stagger: 0.02,
+            })
 
-}, []);
+              .to(anim_words2.words, {   
+                yPercent: -100,
+                ease: "power2.out",
+                stagger: 0.02,
+                }, "<")
+
+            .set(".introloader_fix", { display: "none" });
+
+    }, []);
 
     return (
         <>
             <div className=" introloader_fix w-full fixed top-0 left-0 h-screen z-100  bg-[#f1f1f1] pointer-events-none padding flex items-center">
                 <div className="w-full flex items-center justify-between">
-                    <div className=" relative w-[20vw] overflow-hidden">
-                        <p className=' hello_txt translate-y-full text-3xl font-medium'>Hello</p>
-                        <p className=' absolute intr_txt text-3xl font-medium text-[#F5344F]'>We are Bro's Moving</p>
-                    </div>
+                    <div className="relative w-full overflow-hidden">
+                        <p className='hello_txt translate-y-full text-xl lg:text-3xl font-medium'>
+                            Hello
+                        </p>
 
-                    <div className="">
-                        {words.map((word, i) => (
-                            <div key={i} className=" block w-fit overflow-hidden">
-                                <p key={i} className=' serv_anim_text translate-y-full text-3xl font-medium'>{word}</p>
-                            </div>
-                        ))}
+                        <p className='absolute intr_txt text-xl lg:text-3xl font-medium text-[#F5344F]'>
+                            We are Bro's Moving
+                        </p>
+
+                        <p className='absolute short_txt text-xl lg:text-3xl font-medium'>
+                            Moving made simple fast and stress-free
+                        </p>
                     </div>
                 </div>
             </div>

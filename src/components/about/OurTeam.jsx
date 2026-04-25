@@ -46,18 +46,24 @@ const OurTeam = () => {
             <div className="w-full max_width_layout">
 
                 {/* Header */}
-                <div className="w-full flex items-end justify-between">
-                    <h2 className="text-5xl font-semibold">
+                <div className="w-full md:flex items-end justify-between">
+                    <h2 className="text-3xl max-sm:hidden md:text-5xl  font-semibold">
                         Meet Our Expert <br /> Team Member
                     </h2>
+                    <h2 className="text-3xl md:hidden md:text-5xl  font-semibold">
+                        Meet Our Expert Team Member
+                    </h2>
 
-                    <p className="text-lg leading-tight text-[#6B6E73]">
+                    <p className="text-base max-sm:hidden md:text-lg leading-tight text-[#6B6E73]">
                         Our expert team combines experience, precision, and dedication to
                         <br /> ensure your belongings are handled with care.
                     </p>
+                    <p className="text-base max-sm:mt-2 md:hidden md:text-lg leading-tight text-[#6B6E73]">
+                        Our expert team combines experience, precision, and dedication to ensure your belongings are handled with care.
+                    </p>
 
                     {/* Buttons */}
-                    <div className="flex items-end gap-x-2">
+                    <div className=" max-sm:mt-2 flex items-end max-sm:justify-end gap-x-2">
 
                         {/* PREV */}
                         <button
@@ -97,7 +103,7 @@ const OurTeam = () => {
                 </div>
 
                 {/* Swiper */}
-                <div className="mt-8">
+                <div className="md:mt-8">
                     <Swiper
                         onSwiper={(swiper) => {
                             swiperRef.current = swiper;
@@ -108,25 +114,29 @@ const OurTeam = () => {
                             setIsBeginning(swiper.isBeginning);
                             setIsEnd(swiper.isEnd);
                         }}
-                        spaceBetween={30}
                         slidesPerView={3}
                         grabCursor={true}
                         className="cursor-grab active:cursor-grabbing"
                         breakpoints={{
-                            0: { slidesPerView: 1.2 },
-                            640: { slidesPerView: 2 },
-                            1024: { slidesPerView: 3 },
+                            0: {
+                                slidesPerView: 1.1,
+                                spaceBetween: 10,
+                            },
+                            640: {
+                                slidesPerView: 3,
+                                spaceBetween: 30,
+                            },
                         }}
                     >
                         {teamData.map((member, i) => (
-                            <SwiperSlide key={i} className=" pt-12 group  relative">
+                            <SwiperSlide key={i} className=" pt-6 md:pt-12 group  relative">
                                 <div className="w-full relative text-center">
                                     <div className="w-full  flex items-end justify-center relative ">
                                         <img src="/images/aboutpage/team_card_bg.png" className="absolute inset-0 w-full" alt="" />
                                         <img src="/images/aboutpage/team_card_bg_red.png" className="absolute opacity-0 group-hover:opacity-100 transition-all duration-300 inset-0 w-full" alt="" />
                                         <img src={member.img} className="w-[81%] origin-bottom group-hover:scale-105 transition-all duration-300 relative z-10" alt="" />
                                     </div>
-                                    <h3 className="text-3xl mt-5 font-semibold">
+                                    <h3 className="text-2xl md:text-3xl  mt-5 font-semibold">
                                         {member.name}
                                     </h3>
                                     <p className="text-[#6B6E73]">{member.role}</p>

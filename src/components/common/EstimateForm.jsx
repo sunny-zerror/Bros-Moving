@@ -52,7 +52,7 @@ const EstimateForm = () => {
 
                     <form
                         onSubmit={handleSubmit}
-                        className={`w-[35%] bg-white rounded-[2rem] p-8 shadow-lg 
+                        className={` w-full md:w-[35%] bg-white rounded-[2rem] p-6 md:p-8 shadow-lg 
           transition-all duration-300
           ${isOpen ? "scale-100 " : "scale-95"}`}
                     >
@@ -195,7 +195,7 @@ const EstimateForm = () => {
                         {/* Submit */}
                         <button
                             type="submit"
-                            className=" group w-full mt-8 bg-[#090A0C] hover:bg-white hover:text-[#090A0C] hover:font-medium border border-[#090A0C] text-white py-3 rounded-full flex items-center justify-center gap-2 text-lg transition-all duration-300"
+                            className=" group w-full mt-8 bg-[#090A0C] hover:bg-white hover:text-[#090A0C] hover:font-medium border border-[#090A0C] text-white py-3 rounded-full flex items-center justify-center gap-2 text-base md:text-lg transition-all duration-300"
                         >
                             Calculate Cost
                             <img src="/icons/compass.svg" className="w-4 group-hover:invert-100 group-hover:rotate-90 transition-all duration-300" />

@@ -60,15 +60,15 @@ const BLOGS = [
 
 const TrendingBlogs = () => {
 
-        const [isBeginning, setIsBeginning] = useState(true);
-        const [isEnd, setIsEnd] = useState(false);
-        const swiperRef = useRef(null);
-    
+    const [isBeginning, setIsBeginning] = useState(true);
+    const [isEnd, setIsEnd] = useState(false);
+    const swiperRef = useRef(null);
+
     return (
         <>
             <div className=" w-full padding bg-[#F9F6F3]">
                 <div className=" max_width_layout w-full flex items-end justify-between">
-                    <h2 className='text-5xl font-semibold '>Read Latest Blog</h2>
+                    <h2 className='text-3xl md:text-5xl  font-semibold '>Read Latest Blog</h2>
                     <div className="flex items-end gap-x-2">
 
                         {/* PREV */}
@@ -124,9 +124,14 @@ const TrendingBlogs = () => {
                         grabCursor={true}
                         className="cursor-grab active:cursor-grabbing"
                         breakpoints={{
-                            0: { slidesPerView: 1.2 },
-                            640: { slidesPerView: 2 },
-                            1024: { slidesPerView: 3 },
+                            0: {
+                                slidesPerView: 1.1,
+                                spaceBetween: 10,
+                            },
+                            640: {
+                                slidesPerView: 3,
+                                spaceBetween: 30,
+                            },
                         }}
                     >
                         {BLOGS.map((blog, i) => (
@@ -135,12 +140,12 @@ const TrendingBlogs = () => {
                                     <img src={blog.image} className='w-full group-hover:scale-95 transition-all duration-300' alt="" />
                                     <div className="flex w-full justify-between">
                                         <div className="flex items-center gap-x-2">
-                                            <img src="/icons/form_person.svg" alt="" />
-                                            <p className='text-lg text-[#6B6E73] transition-all duration-300  group-hover:text-[#090A0C]'>{blog.author}</p>
+                                            <img src="/icons/form_person.svg" className='w-5' alt="" />
+                                            <p className='text-base md:text-lg text-[#6B6E73] transition-all duration-300  group-hover:text-[#090A0C]'>{blog.author}</p>
                                         </div>
                                         <div className="flex items-center gap-x-2">
-                                            <img src="/icons/red_calender.svg" alt="" />
-                                            <p className='text-lg text-[#6B6E73] transition-all duration-300  group-hover:text-[#090A0C]'>{blog.date}</p>
+                                            <img src="/icons/red_calender.svg" className='w-5' alt="" />
+                                            <p className='text-base md:text-lg text-[#6B6E73] transition-all duration-300  group-hover:text-[#090A0C]'>{blog.date}</p>
                                         </div>
                                     </div>
                                     <h3 className='text-2xl group-hover:text-[#F5344F]  transition-all duration-300 leading-tight group-hover:underline font-semibold'>{blog.title}</h3>

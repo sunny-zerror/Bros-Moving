@@ -15,7 +15,7 @@ const Button = ({
     ...props
 }) => {
     const baseStyles =
-        " group inline-flex w-fit whitespace-nowrap items-center hover:gap-x-2 gap-x-0  rounded-full transition-all duration-300 px-5 h-12 pr-2  font-medium transition-all duration-300";
+        " group shrink-0 inline-flex w-fit whitespace-nowrap items-center md:hover:gap-x-2 gap-x-0  rounded-full transition-all duration-300 px-4 md:px-5 h-10 md:h-11 pr-0 md:pr-1  font-medium transition-all duration-300";
 
     const variants = {
         primary: "bg-[#F5344F] text-white",

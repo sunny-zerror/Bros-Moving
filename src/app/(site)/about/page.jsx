@@ -11,7 +11,9 @@ const AboutPage = () => {
       <PageHero
         title={"Moving You Forward with Care"}
         description={"We help you move forward with care, making every relocation smooth and stress-free."}
-        image={"/images/aboutpage/about_hero.png"} />
+        image={"/images/aboutpage/about_hero.png"}
+        mobImage={"/images/aboutpage/mob_about_hero.png"}
+         />
       <AboutParagraph />
       <OurMission />
       <OurCertificates />

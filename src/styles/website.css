@@ -11,15 +11,18 @@
   transform-origin: left;
 }
 
-.hero_title div,
-.hero_desc div {
-  display: block;
-  width: fit-content;
-  overflow: hidden;
+.hero_title,
+.hero_desc {
+  text-align: center;
 }
 
-.hero_title span,
-.hero_desc span {
+.line-parent {
+  overflow: hidden;
+  display: block;
+  width: 100%;
+}
+
+.line {
   display: block;
 }
 

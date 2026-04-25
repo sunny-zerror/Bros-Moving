@@ -1,5 +1,8 @@
+"use client";
 import React from 'react'
 import Button from '../common/Button';
+import { useQuoteStore } from '@/store/useQuoteStore';
+
 export const features = [
     {
         id: 1,
@@ -34,27 +37,28 @@ export const features = [
 ];
 
 const WhyChooseSection = () => {
+    const { open } = useQuoteStore();
     return (
-        <div className='w-full padding py-24! bg-[#F9F6F3] '>
-            <div className="w-full  max_width_layout flex items-stretch   relative gap-x-44   ">
-                <div className="h-full absolute left-1/2 -translate-x-1/2 w-[1px] bg-black/10"></div>
-                <div className="w-1/2  ">
+        <div className='w-full padding py-12! md:py-24! bg-[#F9F6F3] '>
+            <div className="w-full  max_width_layout flex flex-col-reverse max-sm:gap-y-10 md:flex-row items-stretch   relative gap-x-44   ">
+                <div className=" max-sm:hidden h-full absolute left-1/2 -translate-x-1/2 w-[1px] bg-black/10"></div>
+                <div className=" w-full md:w-1/2  ">
                     <img src="/images/homepage/why_choose.png" className='w-full' alt="" />
                 </div>
-                <div className="w-1/2 flex flex-col justify-between">
+                <div className=" w-full md:w-1/2 flex flex-col justify-between">
                     <div className="">
-                        <h2 className='text-5xl font-semibold w-[80%] '>Why Choose Bro's Moving?</h2>
-                        <p className='text-[#6B6E73] text-lg mt-4 leading-tight  '>Reliable moving services built on care, efficiency, and clear <br /> communication.</p>
+                        <h2 className='text-3xl md:text-5xl  font-semibold md:w-[80%] '>Why Choose Bro's Moving?</h2>
+                        <p className='text-[#6B6E73] text-base md:text-lg mt-2 leading-tight  '>Reliable moving services built on care, efficiency, and clear <br /> communication.</p>
                     </div>
-                    <div className="space-y-4">
+                    <div className="max-sm:my-4">
                         {features.map((feature, i) => (
-                            <div key={i} className="flex items-center gap-x-4">
+                            <div key={i} className="flex items-center hover:pl-3 py-1 md:py-3 hover:bg-[#ffffff] rounded-lg transition-all duration-300 hover:text-[#F5344F]  gap-x-4">
                                 <img src={feature.icon} className='w-12' alt="" />
-                                <p className='text-lg font-semibold'>{feature.title}</p>
+                                <p className='text-base md:text-lg font-semibold'>{feature.title}</p>
                             </div>
                         ))}
                     </div>
-                    <Button variant="outline">
+                    <Button variant="outline" onClick={open}>
                         Get the Estimated Cost
                     </Button>
                 </div>
