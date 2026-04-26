@@ -8,10 +8,11 @@ import { useGSAP } from '@gsap/react';
 import { useQuoteStore } from '@/store/useQuoteStore';
 import { Link } from 'next-view-transitions';
 import Introloader from '../common/Introloader';
-gsap.registerPlugin(SplitText);
+import CustomEase from 'gsap/dist/CustomEase';
+gsap.registerPlugin(SplitText, CustomEase);
 
 const Hero = () => {
-
+    CustomEase.create("custom", "0.77, 0, 0.175, 1");
     const { open } = useQuoteStore();
     const container = useRef();
 
@@ -40,38 +41,43 @@ const Hero = () => {
 
         tl.to(".line1a", {
             transform: "translateY(-100%)",
-            ease: "expo.out",
+            ease: "custom",
             duration: .8
         })
         tl.to(".line2a", {
             transform: "translateY(-8%)",
-            ease: "expo.out",
+            ease: "custom",
             duration: .8
         }, "<")
         tl.to(".line2a", {
             transform: "translateY(-108%)",
-            ease: "expo.out",
+            ease: "custom",
             duration: .8
         })
         tl.to(".line3a", {
             transform: "translateY(-8%)",
-            ease: "expo.out",
+            ease: "custom",
             duration: .8
         }, "<")
+        tl.to(".line3a", {
+            color:"white",
+            ease: "custom",
+            duration: .8
+        })
 
-        tl.to(".vide_pren", { clipPath: "polygon(0% 0%, 100% 0, 100% 100%, 0% 100%)", duration: 1.2, ease: "expo.out" }, "<");
-        tl.to(".hero_video", { scale: 1, duration: .8, ease: "power2.out" }, "<");
+        tl.to(".vide_pren", { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", duration: .9, ease: "custom" }, "<");
+        tl.to(".hero_video", { scale: 1, duration: .8, ease: "custom" }, "<");
 
         tl.to(descSplit.lines, {
             yPercent: 0,
             duration: 1,
-            ease: "power3.out",
+            ease: "custom",
             stagger: 0.05,
         }, "<0.2");
         tl.to(".quote_btn_paren", {
             opacity: 1,
-            ease: "power3.out",
-        }, "<0.2");
+            ease: "custom",
+        }, "<0.4");
 
     }, { scope: container });
 
@@ -80,8 +86,8 @@ const Hero = () => {
         <>
             {/* <Introloader /> */}
             <div ref={container} className="w-full  h-[100svh]  relative p-2 md:p-5">
-                <div style={{ clipPath: "polygon(0% 0%, 100% 0, 100% 0%, 0% 0%)" }} className="vide_pren w-full h-full overflow-hidden rounded-2xl md:rounded-[36px]">
-                    <video poster='/images/hero_video_poster_.webp' loop autoPlay muted playsInline src="/videos/hero_video.mp4" className={` hero_video scale-[2] cover brightness-95`} alt="" />
+                <div style={{ clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)" }} className="vide_pren w-full h-full overflow-hidden rounded-2xl md:rounded-[36px]">
+                    <video poster='/images/hero_video_poster_.webp' loop autoPlay muted playsInline src="/videos/hero_video.mp4" className={` hero_video scale-[3] cover brightness-95`} alt="" />
                 </div>
                 <div className="w-full padding absolute  h-full  inset-0">
                     <div className=" max_width_layout  w-full  h-full">
@@ -92,13 +98,13 @@ const Hero = () => {
                                         <div className='block overflow-hidden  relative'>
                                             <div className=' line1a text-black'>Hi</div>
                                             <div className=' line2a translate-y-full absolute inset-0 text-[#F5344F]'>We’re Bro’s moving</div>
-                                            <div className=' line3a translate-y-full absolute inset-0'>⁠We make</div>
+                                            <div className=' line3a translate-y-full absolute inset-0 text-[#090A0C]'>⁠We make</div>
                                         </div>
                                         <div className='block overflow-hidden'>
-                                            <div className='line3a translate-y-full'>moving reliable & </div>
+                                            <div className='line3a text-[#090A0C] translate-y-full'>moving reliable & </div>
                                         </div>
                                         <div className='block overflow-hidden'>
-                                            <div className="line3a translate-y-full">
+                                            <div className="line3a text-[#090A0C] translate-y-full">
                                                 stress-free
                                             </div>
                                         </div>

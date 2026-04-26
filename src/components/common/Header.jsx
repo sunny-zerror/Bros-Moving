@@ -42,7 +42,7 @@ const Header = () => {
 
     gsap.to(".header", {
       opacity: 1,
-      delay: 2
+      delay: 3
     })
 
     const tl = gsap.timeline({
